@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp267ykfbppyp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_frq8d"]
+
+[node name="EggCollectionScene" type="Node2D"]
+
+[node name="background" type="Sprite2D" parent="."]
+
+[node name="Egg" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Egg"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Egg"]
+shape = SubResource("CircleShape2D_xxlq0")
+
+[node name="Basket" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="CharacterBody2D" parent="Basket"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
+shape = SubResource("RectangleShape2D_frq8d")
