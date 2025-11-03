@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bs04746taahky"]
+[gd_scene load_steps=4 format=3 uid="uid://db620c7buedvc"]
 
-[ext_resource type="Script" uid="uid://db5a8srbyhk6g" path="res://noder/ui_objekter/ui_scripts/dialog_boks.gd" id="1_a8fig"]
-[ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_a8fig"]
+[ext_resource type="Script" uid="uid://cwk5wi03soy0u" path="res://noder/ui_objekter/ui_scripts/dialog_boks.gd" id="1_vb3rc"]
+[ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_f5m2h"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_twnd8"]
 bg_color = Color(0.16470589, 0.16470589, 0.16470589, 1)
@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-script = ExtResource("1_a8fig")
+script = ExtResource("1_vb3rc")
 
 [node name="Panel" type="Panel" parent="dialog_boks"]
 layout_mode = 1
@@ -40,7 +40,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_a8fig")
+theme_override_fonts/font = ExtResource("2_f5m2h")
 theme_override_font_sizes/font_size = 24
 text = "ererdfdfdfdfdf"
 autowrap_mode = 3
