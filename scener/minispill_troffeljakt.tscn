@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://wbi0ui5fjxn0"]
-
-[node name="MinispillTroffeljakt" type="Node2D"]
-
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
