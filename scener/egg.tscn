@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://f62sng86m1vi"]
+
+[ext_resource type="Script" uid="uid://cjdxnceamj3th" path="res://noder/spill_eggsamling/eggsamling_scripts/eggspawn.gd" id="1_gcdsy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
+
+[node name="Egg" type="Area2D"]
+script = ExtResource("1_gcdsy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xxlq0")
+
+[node name="SpawnPoint1" type="Marker2D" parent="."]
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+
+[node name="Marker2D3" type="Marker2D" parent="."]
