@@ -1,4 +1,8 @@
+
 [gd_scene load_steps=3 format=3 uid="uid://cp267ykfbppyp"]
+
+[ext_resource path="res://noder/ui_objekter/kurv/kurv.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/grafikk/bakgrunner/bg_placeholder.png" type="Texture2D" id=2]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
 
@@ -6,7 +10,21 @@
 
 [node name="EggCollectionScene" type="Node2D"]
 
+[node name="BackgroundColor" type="ColorRect" parent="."]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0.2, 0.2, 0.2, 1)
+
 [node name="background" type="Sprite2D" parent="."]
+texture = ExtResource( 2 )
+position = Vector2(0, 0)
+scale = Vector2(1, 1)
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 
 [node name="Egg" type="Area2D" parent="."]
 
@@ -21,3 +39,6 @@ shape = SubResource("CircleShape2D_xxlq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
 shape = SubResource("RectangleShape2D_frq8d")
+
+[node name="Kurv" instance=ExtResource( 1 ) parent="."]
+position = Vector2(400, 560)  # Initial Y will be overridden by _ready()
