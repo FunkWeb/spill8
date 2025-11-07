@@ -9,27 +9,31 @@ extends Node2D
 
 func _ready():
     queue_redraw() # Godot 4.x: use queue_redraw() instead of update()
+    # If a Sprite2D child with a texture exists, use its size for clamping by default
+    if has_node("Sprite2D"):
+        var s = $Sprite2D
+        if s.texture:
+            size = s.texture.get_size() * s.scale
 
 func _draw():
-    # Draw a centered rectangle as a visible placeholder "sprite"
-    var r = Rect2(-size * 0.5, size)
-    draw_rect(r, color)
-    # Simple border
-    draw_rect(r, Color.BLACK, false, 2.0)
-    
+    # Only draw debug visuals here. The visible sprite is provided by the Sprite2D child.
+    if not show_debug:
+        return
+
     # Debug visualization when enabled
-    if show_debug:
-        var vw = get_viewport_rect().size
-        var half = size.x * 0.5
-        # Show movement bounds
-        var y_offset = size.y * 0.7
-        draw_line(Vector2(half - position.x, y_offset), 
-                 Vector2(vw.x - half - position.x, y_offset),
-                 Color(1,1,1,0.3), 2.0)
-        # Show current state
-        var state = "Mouse" if use_mouse else "Keyboard"
-        draw_string(ThemeDB.fallback_font, Vector2(-size.x * 0.5, -size.y),
-                   state + " | Pos: " + str(snapped(position.x, 0.1)))
+    var vw = get_viewport_rect().size
+    var half = size.x * 0.5
+    # Show movement bounds (relative to node)
+    var y_offset = size.y * 0.7
+    draw_line(Vector2(-half, y_offset), Vector2(vw.x - half - position.x, y_offset), Color(1,1,1,0.3), 2.0)
+    # Show current state
+    var state = "Mouse" if use_mouse else "Keyboard"
+    # draw_string requires a Font; use fallback if available
+    var font = ThemeDB.fallback_font
+    if font:
+        draw_string(font, Vector2(-size.x * 0.5, -size.y), state + " | Pos: " + str(round(position.x, 1)))
+    else:
+        draw_text(Vector2(-size.x * 0.5, -size.y), state + " | Pos: " + str(round(position.x, 1)))
 
 func _physics_process(delta):
     if use_mouse:
