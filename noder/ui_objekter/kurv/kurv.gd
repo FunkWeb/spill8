@@ -30,10 +30,9 @@ func _draw():
     var state = "Mouse" if use_mouse else "Keyboard"
     # draw_string requires a Font; use fallback if available
     var font = ThemeDB.fallback_font
+    var pos_str = "%0.1f" % position.x
     if font:
-        draw_string(font, Vector2(-size.x * 0.5, -size.y), state + " | Pos: " + str(round(position.x, 1)))
-    else:
-        draw_text(Vector2(-size.x * 0.5, -size.y), state + " | Pos: " + str(round(position.x, 1)))
+        draw_string(font, Vector2(-size.x * 0.5, -size.y), state + " | Pos: " + pos_str)
 
 func _physics_process(delta):
     if use_mouse:
