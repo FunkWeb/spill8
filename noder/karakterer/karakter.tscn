@@ -1,3 +1,3 @@
-[gd_scene format=3 uid="uid://bckg1skvm8goh"]
+[gd_scene load_steps=0 format=3 uid="uid://bckg1skvm8goh"]
 
 [node name="karakter" type="CharacterBody2D"]
