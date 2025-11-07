@@ -9,6 +9,9 @@ extends Node2D
 
 func _ready():
     queue_redraw() # Godot 4.x: use queue_redraw() instead of update()
+    # Position kurv at bottom of viewport
+    var vp = get_viewport_rect().size
+    position.y = vp.y - 40  # Place 40 pixels from bottom
     print("Kurv ready, pos=", position)
     # If a Sprite2D child with a texture exists, use its size for clamping by default
     if has_node("Sprite2D"):
