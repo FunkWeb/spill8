@@ -1,4 +1,7 @@
+
 [gd_scene load_steps=3 format=3 uid="uid://cp267ykfbppyp"]
+
+[ext_resource path="res://noder/ui_objekter/kurv/kurv.tscn" type="PackedScene" id=1]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
 
@@ -21,3 +24,6 @@ shape = SubResource("CircleShape2D_xxlq0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
 shape = SubResource("RectangleShape2D_frq8d")
+
+[node name="Kurv" instance=ExtResource( 1 ) parent="."]
+position = Vector2(400, 520)
