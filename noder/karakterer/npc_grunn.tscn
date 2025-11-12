@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://c20bol3jrarvj"]
+
+[sub_resource type="GDScript" id="GDScript_68gjd"]
+script/source = "extends CharacterBody2D
+
+@export var npc_name: String = \"Ukjent\"
+@export var speed: float = 50.0
+
+var direction: Vector2 = Vector2.ZERO
+
+func _ready():
+	print(\"NPC klar:\", npc_name)
+	if has_node(\"Label\"):
+		$Label.text = npc_name
+
+func _physics_process(_delta):
+	velocity = direction * speed
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jcne"]
+radius = 24.0
+height = 48.0
+
+[node name="npc_grunn" type="Node2D"]
+
+[node name="NPC_grunn_noder" type="CharacterBody2D" parent="."]
+script = SubResource("GDScript_68gjd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_grunn_noder"]
+shape = SubResource("CapsuleShape2D_0jcne")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_grunn_noder"]
