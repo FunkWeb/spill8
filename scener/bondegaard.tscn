@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bxoqki4oaohlt"]
+[gd_scene load_steps=9 format=3 uid="uid://bxoqki4oaohlt"]
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_ipip8"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_2w0ah"]
@@ -10,33 +10,62 @@ texture = ExtResource("2_2w0ah")
 sources/0 = SubResource("TileSetAtlasSource_yuh2m")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipip8"]
-size = Vector2(48, 48)
+size = Vector2(49, 43)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w0ah"]
-size = Vector2(96, 96)
+size = Vector2(145, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yuh2m"]
+size = Vector2(221, 173)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgpxg"]
+size = Vector2(158, 49)
 
 [node name="Bondegaard" type="Node2D"]
 
 [node name="Bakgrunn" type="Sprite2D" parent="."]
-position = Vector2(456, 385)
+position = Vector2(608, 253)
 texture = ExtResource("1_ipip8")
 
 [node name="Tekstur" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_qgpxg")
 
-[node name="Hønsehus" type="Area2D" parent="."]
+[node name="Hønsehus" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hønsehus"]
-position = Vector2(180, -24)
+position = Vector2(680.5, 40.5)
 shape = SubResource("RectangleShape2D_ipip8")
 
 [node name="Sprite2D" type="Sprite2D" parent="Hønsehus"]
 
-[node name="Låve" type="Area2D" parent="."]
+[node name="Polygon2D" type="Polygon2D" parent="Hønsehus"]
+polygon = PackedVector2Array(655, 19, 655, 17, 679, 5, 681, 5, 705, 17, 705, 19)
+
+[node name="Låve" type="StaticBody2D" parent="."]
 position = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Låve"]
-position = Vector2(47, -48)
+position = Vector2(775.5, 234)
 shape = SubResource("RectangleShape2D_2w0ah")
 
 [node name="Sprite2D" type="Sprite2D" parent="Låve"]
+
+[node name="Fjell" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fjell"]
+position = Vector2(768.5, -156.5)
+shape = SubResource("RectangleShape2D_yuh2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Fjell"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fjell"]
+position = Vector2(736, -45.5)
+shape = SubResource("RectangleShape2D_qgpxg")
+
+[node name="Gjerdet" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Gjerdet"]
+
+[node name="Sprite2D" type="Sprite2D" parent="Gjerdet"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gjerdet"]
