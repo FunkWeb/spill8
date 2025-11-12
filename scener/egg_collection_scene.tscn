@@ -1,25 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp267ykfbppyp"]
+[gd_scene load_steps=3 format=3 uid="uid://cp267ykfbppyp"]
 
 [ext_resource type="PackedScene" uid="uid://f62sng86m1vi" path="res://scener/egg.tscn" id="1_dqlqv"]
-[ext_resource type="Script" uid="uid://cntxf7gkysgt2" path="res://noder/spill_eggsamling/eggsamling_scripts/fallingegg.gd" id="2_50bp1"]
 [ext_resource type="Script" uid="uid://cjdxnceamj3th" path="res://noder/spill_eggsamling/eggsamling_scripts/eggspawn.gd" id="2_rlsgd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_frq8d"]
-
 [node name="EggCollectionScene" type="Node2D"]
+script = ExtResource("2_rlsgd")
+egg_scene = ExtResource("1_dqlqv")
 
 [node name="background" type="Sprite2D" parent="."]
 
-[node name="Egg" parent="." instance=ExtResource("1_dqlqv")]
-script = ExtResource("2_50bp1")
-
-[node name="Basket" type="Node2D" parent="."]
-
-[node name="Sprite2D" type="CharacterBody2D" parent="Basket"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Basket"]
-shape = SubResource("RectangleShape2D_frq8d")
-
 [node name="EggSpawner" type="Node2D" parent="."]
 script = ExtResource("2_rlsgd")
-egg_scene = ExtResource("1_dqlqv")
+egg_scene = null
