@@ -18,6 +18,7 @@ size = Vector2(96, 96)
 [node name="Bondegaard" type="Node2D"]
 
 [node name="Bakgrunn" type="Sprite2D" parent="."]
+position = Vector2(456, 385)
 texture = ExtResource("1_ipip8")
 
 [node name="Tekstur" type="TileMapLayer" parent="."]
