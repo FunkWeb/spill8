@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cp267ykfbppyp"]
 
-[ext_resource type="PackedScene" uid="uid://f62sng86m1vi" path="res://scener/egg.tscn" id="1_dqlqv"]
+[ext_resource type="PackedScene" uid="uid://f62sng86m1vi" path="res://noder/spill_eggsamling/egg.tscn" id="1_dqlqv"]
 [ext_resource type="Script" uid="uid://cjdxnceamj3th" path="res://noder/spill_eggsamling/eggsamling_scripts/eggspawn.gd" id="2_rlsgd"]
 
 [node name="EggCollectionScene" type="Node2D"]
@@ -11,4 +11,3 @@ egg_scene = ExtResource("1_dqlqv")
 
 [node name="EggSpawner" type="Node2D" parent="."]
 script = ExtResource("2_rlsgd")
-egg_scene = null
