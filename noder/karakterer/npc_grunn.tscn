@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c20bol3jrarvj"]
+[gd_scene load_steps=15 format=3 uid="uid://c20bol3jrarvj"]
 
 [ext_resource type="Texture2D" uid="uid://dbjo6d7syvaju" path="res://assets/grafikk/sprites/sprite.png" id="1_o1n33"]
 
@@ -24,25 +24,21 @@ func _physics_process(_delta):
 radius = 24.0
 height = 48.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o1n33"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_68gjd"]
 atlas = ExtResource("1_o1n33")
-region = Rect2(16, 32, 16, 16)
+region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1kwtk"]
 atlas = ExtResource("1_o1n33")
 region = Rect2(0, 32, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_68gjd"]
-atlas = ExtResource("1_o1n33")
-region = Rect2(16, 0, 16, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_yguqy"]
 atlas = ExtResource("1_o1n33")
-region = Rect2(16, 48, 16, 16)
+region = Rect2(16, 32, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rbwgh"]
 atlas = ExtResource("1_o1n33")
-region = Rect2(0, 48, 16, 16)
+region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ecgt"]
 atlas = ExtResource("1_o1n33")
@@ -50,7 +46,7 @@ region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajp44"]
 atlas = ExtResource("1_o1n33")
-region = Rect2(0, 64, 16, 16)
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ar0e"]
 atlas = ExtResource("1_o1n33")
@@ -60,58 +56,49 @@ region = Rect2(16, 16, 16, 16)
 atlas = ExtResource("1_o1n33")
 region = Rect2(0, 16, 16, 16)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6rxm"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xie5"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(16, 48, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_x234m"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_o1n33")
+"texture": SubResource("AtlasTexture_68gjd")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1kwtk")
-}],
-"loop": true,
-"name": &"down",
-"speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_68gjd")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yguqy")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_rbwgh")
-}],
-"loop": true,
-"name": &"left",
-"speed": 5.0
 }, {
-"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0ecgt")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ajp44")
-}],
-"loop": true,
-"name": &"right",
-"speed": 5.0
 }, {
-"frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4ar0e")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8uj2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6rxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xie5")
 }],
 "loop": true,
-"name": &"up",
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -126,4 +113,3 @@ shape = SubResource("CapsuleShape2D_0jcne")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_grunn_noder"]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_x234m")
-animation = &"up"
