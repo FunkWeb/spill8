@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxoqki4oaohlt"]
+[gd_scene load_steps=8 format=3 uid="uid://bxoqki4oaohlt"]
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_ipip8"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_2w0ah"]
+[ext_resource type="Script" uid="uid://ej7g7u22bpv1" path="res://scener/area_2d.gd" id="3_2w0ah"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuh2m"]
 texture = ExtResource("2_2w0ah")
@@ -10,62 +11,70 @@ texture = ExtResource("2_2w0ah")
 sources/0 = SubResource("TileSetAtlasSource_yuh2m")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ipip8"]
-size = Vector2(49, 43)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w0ah"]
-size = Vector2(145, 70)
+size = Vector2(144.25, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yuh2m"]
-size = Vector2(221, 173)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgpxg"]
-size = Vector2(158, 49)
+size = Vector2(61, 288)
 
 [node name="Bondegaard" type="Node2D"]
 
 [node name="Bakgrunn" type="Sprite2D" parent="."]
-position = Vector2(608, 253)
 texture = ExtResource("1_ipip8")
 
 [node name="Tekstur" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_qgpxg")
 
-[node name="Hønsehus" type="StaticBody2D" parent="."]
+[node name="collisions" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hønsehus"]
-position = Vector2(680.5, 40.5)
+[node name="låve" type="CollisionShape2D" parent="collisions"]
+position = Vector2(167.875, -18.5)
 shape = SubResource("RectangleShape2D_ipip8")
 
-[node name="Sprite2D" type="Sprite2D" parent="Hønsehus"]
+[node name="fjell" type="CollisionPolygon2D" parent="collisions"]
+position = Vector2(186, -461)
+polygon = PackedVector2Array(-138, -35, -136, 181, -128, 187, 11, 186, 20, 179, 19, 138, 82, 135, 85, -35)
 
-[node name="Polygon2D" type="Polygon2D" parent="Hønsehus"]
-polygon = PackedVector2Array(655, 19, 655, 17, 679, 5, 681, 5, 705, 17, 705, 19)
+[node name="skog_gjerde" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(-334, -195, -162, -194, -162, -496, -166, -496, -166, -206, -334, -206)
 
-[node name="Låve" type="StaticBody2D" parent="."]
-position = Vector2(1, 0)
+[node name="hønsehus" type="CollisionPolygon2D" parent="collisions"]
+position = Vector2(72, -214)
+polygon = PackedVector2Array(-24, -21, -24, 7, -56, 6, -56, 22, -24, 22, -22, 23, 24, 23, 24, -4, 25, -22, 1, -33, -1, -34)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Låve"]
-position = Vector2(775.5, 234)
-shape = SubResource("RectangleShape2D_2w0ah")
+[node name="traktor" type="CollisionPolygon2D" parent="collisions"]
+position = Vector2(128, -200.5)
+polygon = PackedVector2Array(-14, -21.5, -12, 19.5, -4, 22.5, 6, 22.5, 13, 18.5, 15, -22.5)
 
-[node name="Sprite2D" type="Sprite2D" parent="Låve"]
+[node name="kart_grense" type="CollisionPolygon2D" parent="collisions"]
+position = Vector2(6, -1)
+build_mode = 1
+polygon = PackedVector2Array(746, -495, 746, -278, 746, 497, -758, 497, -758, -495)
 
-[node name="Fjell" type="StaticBody2D" parent="."]
+[node name="hus" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(-96, -175, -95, -191, -144, -191, -145, -263, 1, -263, 0, -190, -48, -191, -48, -173)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Fjell"]
-position = Vector2(768.5, -156.5)
+[node name="gård_gjerde" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(186, -274, 186, -114, 752, -114, 752, -127, 190, -126, 190, -274)
+
+[node name="låve_gjerde" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(194, 16, 194, 110, 286, 110, 286, 2, 241, 2, 240, 16)
+
+[node name="låve_rampe_area" type="Area2D" parent="collisions"]
+script = ExtResource("3_2w0ah")
+
+[node name="låve_rampe_sensor" type="CollisionPolygon2D" parent="collisions/låve_rampe_area"]
+polygon = PackedVector2Array(79, -31, 79, -2, 48, 13, 48, -15)
+
+[node name="låve_rampe_kollisjon" type="CollisionPolygon2D" parent="collisions"]
+build_mode = 1
+polygon = PackedVector2Array(48, 17, 80, 17, 80, 0, 96, 0, 95, -34, 79, -33, 79, -31, 48, -16, 79, -31, 80, -34, 95, -34, 96, 0, 96, -5, 80, -5, 79, -1, 74, 0, 62, 6, 48, 13)
+
+[node name="tjern" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(-160, -48, -122, -48, -115, -46, -113, -38, -112, -37, -112, 166, -114, 173, -119, 175, -122, 176, -359, 176, -365, 174, -368, 166, -368, 118, -370, 114, -374, 112, -423, 112, -430, 109, -432, 102, -432, -103, -430, -109, -423, -111, -422, -112, -374, -112, -370, -114, -368, -118, -368, -231, -365, -238, -357, -240, -345, -240, -339, -238, -336, -230, -336, -118, -334, -114, -330, -113, -328, -112, -281, -112, -275, -110, -272, -103, -272, -22, -269, -17, -266, -17, -264, -16, -214, -16, -210, -18, -208, -22, -208, -39, -207, -43, -203, -47, -199, -47, -199, -48, -176, -48, -176, -38, -174, -38, -174, -36, -176, -36, -176, -22, -174, -22, -174, -20, -178, -20, -177, -17, -160, -17, -158, -19, -162, -19, -162, -21, -160, -21, -160, -33, -160, -36, -162, -36, -158, -36, -162, -36, -162, -38, -158, -38, -160, -39, -160, -39, -160, -42)
+
+[node name="skog" type="CollisionShape2D" parent="collisions"]
+position = Vector2(-398.5, -352)
 shape = SubResource("RectangleShape2D_yuh2m")
 
-[node name="Sprite2D" type="Sprite2D" parent="Fjell"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Fjell"]
-position = Vector2(736, -45.5)
-shape = SubResource("RectangleShape2D_qgpxg")
-
-[node name="Gjerdet" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Gjerdet"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Gjerdet"]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Gjerdet"]
+[node name="skilt" type="CollisionPolygon2D" parent="collisions"]
+polygon = PackedVector2Array(-234, -178, -234, -182, -238, -182, -238, -189, -234, -189, -234, -192, -230, -192, -230, -189, -226, -189, -226, -182, -230, -182, -230, -178)
