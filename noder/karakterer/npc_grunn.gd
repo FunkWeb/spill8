@@ -10,11 +10,10 @@ func _ready():
 	if has_node("Label"):
 		$Label.text = npc_name
 
-	# Setup AnimatedSprite2D frames at runtime using placeholder spritesheet
 	if has_node("AnimatedSprite2D"):
 		var sprite_node = $AnimatedSprite2D
 		var frames = SpriteFrames.new()
-		# Create an 'idle' animation and add one frame from the spritesheet
+	
 		frames.add_animation("idle")
 		var tex = load("res://assets/grafikk/sprites/sprt_placeholder.png")
 		if tex:
