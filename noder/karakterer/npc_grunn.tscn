@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://c20bol3jrarvj"]
 
-[ext_resource path="res://noder/karakterer/npc_grunn.gd" type="Script" id=1]
+[ext_resource path="res://noder/karakterer/scripts/npc_grunn.gd" type="Script" id="1_8x0v6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jcne"]
 radius = 24.0
@@ -9,7 +9,7 @@ height = 48.0
 [node name="npc_grunn" type="Node2D"]
 
 [node name="NPC_grunn_noder" type="CharacterBody2D" parent="."]
-script = ExtResource( 1 )
+script = ExtResource( "1_8x0v6" )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_grunn_noder"]
 shape = SubResource("CapsuleShape2D_0jcne")
