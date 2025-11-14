@@ -1,7 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c20bol3jrarvj"]
 
 [ext_resource path="res://noder/karakterer/scripts/npc_grunn.gd" type="Script" id="1_8x0v6"]
-[ext_resource path="res://noder/karakterer/scripts/npc_grunn.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jcne"]
 radius = 24.0
@@ -88,7 +87,7 @@ animations = [{
 [node name="npc_grunn" type="Node2D"]
 
 [node name="NPC_grunn_noder" type="CharacterBody2D" parent="."]
-script = ExtResource( "1_8x0v6" )
+script = ExtResource( "script_npc" )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_grunn_noder"]
 shape = SubResource("CapsuleShape2D_0jcne")
