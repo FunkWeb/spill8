@@ -1,8 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://c20bol3jrarvj"]
 
-[ext_resource type="Texture2D" uid="uid://dbjo6d7syvaju" path="res://assets/grafikk/sprites/sprite.png" id="1_o1n33"]
-
-[ext_resource path="res://noder/karakterer/npc_grunn.gd" type="Script" id=1]
+[ext_resource path="res://noder/karakterer/scripts/npc_grunn.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jcne"]
 radius = 24.0
