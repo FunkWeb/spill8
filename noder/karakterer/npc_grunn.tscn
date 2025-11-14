@@ -1,10 +1,88 @@
-[gd_scene load_steps=3 format=3 uid="uid://c20bol3jrarvj"]
+[gd_scene load_steps=15 format=3 uid="uid://c20bol3jrarvj"]
 
 [ext_resource path="res://noder/karakterer/scripts/npc_grunn.gd" type="Script" id=1]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jcne"]
 radius = 24.0
 height = 48.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68gjd"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kwtk"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yguqy"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbwgh"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ecgt"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajp44"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ar0e"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uj2u"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i6rxm"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6xie5"]
+atlas = ExtResource("1_o1n33")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x234m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68gjd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kwtk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yguqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbwgh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ecgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajp44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ar0e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8uj2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i6rxm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6xie5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="npc_grunn" type="Node2D"]
 
@@ -15,3 +93,5 @@ script = ExtResource( 1 )
 shape = SubResource("CapsuleShape2D_0jcne")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_grunn_noder"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_x234m")
