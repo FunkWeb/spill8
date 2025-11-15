@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bckg1skvm8goh"]
+
+[ext_resource type="AudioStream" uid="uid://ckbwuqy7n1pba" path="res://assets/lyd/tale/talespor.ogg" id="1_81bvt"]
+
+[node name="karakter" type="CharacterBody2D"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_81bvt")
+volume_db = 0.2
+autoplay = true
+parameters/looping = true
