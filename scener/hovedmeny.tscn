@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://byo771ssl4b4l"]
+
+[ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_8pb1i"]
+[ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="1_m46b7"]
+[ext_resource type="Script" uid="uid://uuuvyhs5u2hg" path="res://noder/hovedmeny/hovedmeny.gd" id="1_w833n"]
+[ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_e3k6c"]
+
+[node name="hovedmeny" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 512.0
+offset_bottom = 288.0
+script = ExtResource("1_w833n")
+
+[node name="Bakgrunn" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 288.0
+texture = ExtResource("1_8pb1i")
+expand_mode = 1
+
+[node name="tittel" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 102.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_m46b7")
+theme_override_font_sizes/font_size = 120
+text = "Luntun"
+horizontal_alignment = 1
+
+[node name="start" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.5
+offset_top = -4.0
+offset_right = 55.5
+offset_bottom = 47.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_e3k6c")
+theme_override_font_sizes/font_size = 31
+text = "Start"
+
+[node name="avslutt" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -57.0
+offset_top = -88.0
+offset_right = 57.0
+offset_bottom = -43.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_e3k6c")
+theme_override_font_sizes/font_size = 33
+text = "Avslutt"
+
+[node name="eggsamling" type="Button" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -103.0
+offset_top = -43.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_e3k6c")
+theme_override_font_sizes/font_size = 22
+text = "Eggsamling"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="avslutt" to="." method="_on_avslutt_pressed"]
+[connection signal="pressed" from="eggsamling" to="." method="_on_eggsamling_pressed"]

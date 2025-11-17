@@ -7,7 +7,7 @@
 [node name="Testscene" type="Node2D"]
 
 [node name="BgPlaceholder" type="Sprite2D" parent="."]
-position = Vector2(248, 166)
+position = Vector2(426, 213)
 texture = ExtResource("1_itdtt")
 
 [node name="SprtPlaceholder" type="Sprite2D" parent="."]

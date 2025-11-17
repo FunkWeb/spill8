@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bxoqki4oaohlt"]
 
-[ext_resource type="Texture2D" uid="uid://crg67vyxcrx1u" path="res://assets/grafikk/bakgrunner/bg_placeholder.png" id="1_ipip8"]
+[ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_ipip8"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_2w0ah"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuh2m"]

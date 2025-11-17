@@ -11,13 +11,16 @@ config_version=5
 [application]
 
 config/name="spill8"
+run/main_scene="uid://byo771ssl4b4l"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
 
 [display]
 
-window/size/viewport_width=427
-window/size/viewport_height=240
+window/size/viewport_width=512
+window/size/viewport_height=288
+window/size/window_width_override=1024
+window/size/window_height_override=576
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 
