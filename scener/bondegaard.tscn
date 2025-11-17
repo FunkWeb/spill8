@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_ipip8"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_2w0ah"]
-[ext_resource type="Script" uid="uid://ej7g7u22bpv1" path="res://scener/area_2d.gd" id="3_2w0ah"]
+[ext_resource type="Script" uid="uid://ej7g7u22bpv1" path="res://noder/bondegard/bondegard_scripts/area_2d.gd" id="3_2w0ah"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuh2m"]
 texture = ExtResource("2_2w0ah")
