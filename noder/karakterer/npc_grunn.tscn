@@ -1,6 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c20bol3jrarvj"]
 
 [ext_resource type="Script" path="res://noder/karakterer/karakter_scripts/testscript.gd" id="1_testscript"]
+[ext_resource type="SpriteFrames" path="res://assets/grafikk/sprites/sprite_frames.tres" id="2_spriteframes"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jcne"]
 radius = 24.0
@@ -15,3 +16,6 @@ script = ExtResource("1_testscript")
 shape = SubResource("CapsuleShape2D_0jcne")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_grunn_noder"]
+texture_filter = 1
+sprite_frames = ExtResource("2_spriteframes")
+animation = "default"
