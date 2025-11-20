@@ -30,7 +30,7 @@ texture = ExtResource("2_50bp1")
 script = ExtResource("2_rlsgd")
 egg_scene = ExtResource("1_dqlqv")
 
-[node name="Egg" type="Area2D" parent="."]
+[node name="Egg" type="Area2D" parent="." groups=["eggs"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="Egg"]
 
@@ -39,6 +39,7 @@ shape = SubResource("CircleShape2D_xxlq0")
 
 [node name="Kurv" parent="." instance=ExtResource("1")]
 position = Vector2(400, 560)
+collision_mask = 5
 
 [node name="Sprite2D2" type="Sprite2D" parent="Kurv"]
 
@@ -53,3 +54,5 @@ label_settings = SubResource("LabelSettings_d0e4d")
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+
+[connection signal="area_entered" from="Kurv" to="Kurv" method="_on_area_entered"]

@@ -5,7 +5,8 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
 
-[node name="Egg" type="Area2D"]
+[node name="Egg" type="Area2D" groups=["eggs"]]
+collision_layer = 5
 script = ExtResource("1_gcdsy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

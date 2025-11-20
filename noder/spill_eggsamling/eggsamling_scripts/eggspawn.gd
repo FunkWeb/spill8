@@ -24,6 +24,7 @@ func spawn_egg() -> void:
 	var x_pos = randf_range(0.0, spawn_area_width)
 	egg.position = Vector2(x_pos, top_y)
 	add_child(egg)
+	egg.add_to_group("eggs")
 
 	egg.connect("egg_fallen", Callable(self, "_on_egg_fallen"))
 
