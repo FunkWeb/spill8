@@ -7,8 +7,8 @@ func _ready() -> void:
 	$CanvasLayer/Varsel.visible = false
 
 func _input(event: InputEvent) -> void:
-	# Press spacebar inside Area2D
-	if event.is_action_pressed("ui_select") and player_at_entrance:
+	# Press E
+	if event.is_action_pressed("interact") and player_at_entrance:
 		get_tree().change_scene_to_file(next_scene)
 		
 func _on_body_entered(body: Node2D) -> void:
