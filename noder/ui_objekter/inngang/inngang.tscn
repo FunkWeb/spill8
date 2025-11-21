@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckiikdooul3e5"]
+[gd_scene load_steps=6 format=3 uid="uid://ckiikdooul3e5"]
 
 [ext_resource type="Script" uid="uid://cftd3x3dq4bnu" path="res://noder/ui_objekter/inngang/inngang.gd" id="1_x786v"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_4r686"]
+[ext_resource type="AudioStream" uid="uid://cdnd1vmfhdapr" path="res://assets/lyd/lydeffekt/kubjelle.ogg" id="2_5y5qk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4kp5y"]
 size = Vector2(16, 16)
@@ -16,6 +17,9 @@ script = ExtResource("1_x786v")
 shape = SubResource("RectangleShape2D_4kp5y")
 debug_color = Color(0.058775872, 0.65022326, 5.7756904e-07, 0.41960785)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_5y5qk")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
@@ -25,6 +29,7 @@ offset_right = 144.0
 offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="CanvasLayer/Panel"]
+texture_filter = 1
 layout_mode = 0
 offset_right = 134.0
 offset_bottom = 30.0

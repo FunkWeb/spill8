@@ -14,6 +14,7 @@ func _input(event: InputEvent) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Character:
 		player_at_entrance = true
+		$AudioStreamPlayer2D.play()
 		$CanvasLayer/Panel.visible = true
 		
 func _on_body_exited(body: Node2D) -> void:
