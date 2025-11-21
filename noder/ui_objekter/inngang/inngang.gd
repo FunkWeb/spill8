@@ -1,10 +1,10 @@
 extends Area2D
 
-@export var next_scene: String = "res://scener/egg_collection_scene.tscn"
+@export var next_scene: String
 var player_at_entrance: bool = false
 
 func _ready() -> void:
-	$CanvasLayer/Panel.visible = false
+	$CanvasLayer/Varsel.visible = false
 
 func _input(event: InputEvent) -> void:
 	# Press spacebar inside Area2D
@@ -15,9 +15,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is Character:
 		player_at_entrance = true
 		$AudioStreamPlayer2D.play()
-		$CanvasLayer/Panel.visible = true
+		$CanvasLayer/Varsel.visible = true
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body is Character:
 		player_at_entrance = false
-		$CanvasLayer/Panel.visible = false
+		$CanvasLayer/Varsel.visible = false

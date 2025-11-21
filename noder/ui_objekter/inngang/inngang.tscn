@@ -22,13 +22,13 @@ stream = ExtResource("2_5y5qk")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Varsel" type="Panel" parent="CanvasLayer"]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 144.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+[node name="Label" type="Label" parent="CanvasLayer/Varsel"]
 texture_filter = 1
 layout_mode = 0
 offset_right = 134.0
