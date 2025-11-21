@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var next_scene: String
+@export var next_scene: String = "res://scener/egg_collection_scene.tscn"
 var player_at_entrance: bool = false
 
 func _ready() -> void:
