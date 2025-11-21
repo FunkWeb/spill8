@@ -1,11 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cp267ykfbppyp"]
+[gd_scene load_steps=8 format=3 uid="uid://cp267ykfbppyp"]
 
 [ext_resource type="PackedScene" uid="uid://buv7mce0hfqhu" path="res://noder/ui_objekter/kurv/kurv.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://f62sng86m1vi" path="res://noder/spill_eggsamling/egg.tscn" id="1_dqlqv"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_50bp1"]
 [ext_resource type="Script" uid="uid://cjdxnceamj3th" path="res://noder/spill_eggsamling/eggsamling_scripts/eggspawn.gd" id="2_rlsgd"]
-
-[sub_resource type="PackedScene" id="PackedScene_rlsgd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
 
@@ -14,8 +12,6 @@
 [sub_resource type="LabelSettings" id="LabelSettings_d0e4d"]
 
 [node name="EggCollectionScene" type="Node2D"]
-script = ExtResource("2_rlsgd")
-egg_scene = SubResource("PackedScene_rlsgd")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -29,6 +25,10 @@ texture = ExtResource("2_50bp1")
 [node name="EggSpawner" type="Node2D" parent="."]
 script = ExtResource("2_rlsgd")
 egg_scene = ExtResource("1_dqlqv")
+
+[node name="ScoreLabel" type="Label" parent="EggSpawner"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="Egg" type="Area2D" parent="." groups=["eggs"]]
 

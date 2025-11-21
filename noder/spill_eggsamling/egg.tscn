@@ -16,9 +16,5 @@ shape = SubResource("CircleShape2D_xxlq0")
 
 [node name="Marker2D2" type="Marker2D" parent="."]
 
-[node name="Marker2D3" type="Marker2D" parent="."]
-position = Vector2(213, 141)
-
 [node name="egg" type="Sprite2D" parent="."]
-position = Vector2(99, 40)
 texture = ExtResource("2_gbi6r")

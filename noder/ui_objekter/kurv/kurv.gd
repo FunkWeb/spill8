@@ -11,8 +11,9 @@ func _ready():
 func _on_area_entered(area: Area2D) -> void:
 	if area.is_in_group("eggs"):
 		area.queue_free()
-		get_parent().egg_caught()
-		get_parent().spawn_egg()
+		get_parent().get_node("EggSpawner").egg_caught()
+		get_parent().get_node("EggSpawner").spawn_egg()
+
 
 func _physics_process(delta: float) -> void:
 	var dir = 0
