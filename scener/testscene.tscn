@@ -1,10 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://de54e2qi1q82s"]
+[gd_scene load_steps=4 format=3 uid="uid://de54e2qi1q82s"]
 
 [ext_resource type="Texture2D" uid="uid://crg67vyxcrx1u" path="res://assets/grafikk/bakgrunner/bg_placeholder.png" id="1_itdtt"]
 [ext_resource type="Texture2D" uid="uid://crechqtsuf5i1" path="res://assets/grafikk/sprites/sprt_placeholder.png" id="2_n8h1r"]
 [ext_resource type="Texture2D" uid="uid://cr7pi148jskn4" path="res://assets/grafikk/ui_grafikk/prtrt_placeholder.png" id="3_ig8b1"]
-[ext_resource type="PackedScene" uid="uid://ckiikdooul3e5" path="res://noder/ui_objekter/inngang/inngang.tscn" id="4_ig8b1"]
-[ext_resource type="PackedScene" uid="uid://bckg1skvm8goh" path="res://noder/karakterer/karakter.tscn" id="5_5msi3"]
 
 [node name="Testscene" type="Node2D"]
 
@@ -19,9 +17,3 @@ texture = ExtResource("2_n8h1r")
 [node name="PrtrtPlaceholder" type="Sprite2D" parent="."]
 position = Vector2(219, 25)
 texture = ExtResource("3_ig8b1")
-
-[node name="Inngang" parent="." instance=ExtResource("4_ig8b1")]
-position = Vector2(62, 71)
-
-[node name="karakter" parent="." instance=ExtResource("5_5msi3")]
-position = Vector2(10, 71)
