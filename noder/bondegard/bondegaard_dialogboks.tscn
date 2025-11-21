@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://reynl82o0te2"]
+
+[ext_resource type="Script" uid="uid://bcj7nt5c21gjm" path="res://noder/bondegard/bondegard_scripts/bondegaard_dialogboks.gd" id="1_dpstc"]
+[ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_xpde1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7aonn"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_211ni"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+corner_detail = 5
+
+[node name="Dialogboks" type="CanvasLayer"]
+script = ExtResource("1_dpstc")
+
+[node name="Container" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Bakgrunnsboks" type="Panel" parent="Container"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.25
+anchor_top = 12.225
+anchor_right = 27.559002
+anchor_bottom = 15.275001
+theme_override_styles/panel = SubResource("StyleBoxFlat_7aonn")
+
+[node name="Dialogtekst" type="RichTextLabel" parent="Container/Bakgrunnsboks"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 18.0
+offset_right = -50.360107
+offset_bottom = -22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_xpde1")
+theme_override_font_sizes/normal_font_size = 36
+text = "EKSEMPELTEKST"
+scroll_following_visible_characters = true
+
+[node name="Navneboks" type="Panel" parent="Container/Bakgrunnsboks"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.064
+anchor_top = -0.18900001
+anchor_right = 0.22600001
+anchor_bottom = 0.22100002
+offset_left = -0.35105133
+offset_top = 0.058000565
+offset_right = 0.16661072
+offset_bottom = 0.0379982
+theme_override_styles/panel = SubResource("StyleBoxFlat_211ni")
+
+[node name="Karakternavn" type="Label" parent="Container/Bakgrunnsboks/Navneboks"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.92
+offset_bottom = 4.0
+theme_override_fonts/font = ExtResource("2_xpde1")
+theme_override_font_sizes/font_size = 30
+text = "Kaninen Knut"
+horizontal_alignment = 1
+vertical_alignment = 1
