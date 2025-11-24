@@ -12,12 +12,12 @@ func _input(event: InputEvent) -> void:
 		get_tree().change_scene_to_file(next_scene)
 		
 func _on_body_entered(body: Node2D) -> void:
-	if body is Character:
+	if body.name == "karakter":
 		player_at_entrance = true
 		$AudioStreamPlayer2D.play()
 		$CanvasLayer/Varsel.visible = true
 		
 func _on_body_exited(body: Node2D) -> void:
-	if body is Character:
+	if body.name == "karakter":
 		player_at_entrance = false
 		$CanvasLayer/Varsel.visible = false
