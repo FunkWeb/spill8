@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://ckiikdooul3e5"]
+
+[ext_resource type="Script" uid="uid://cftd3x3dq4bnu" path="res://noder/inngang/script/inngang.gd" id="1_bfijh"]
+[ext_resource type="AudioStream" uid="uid://cdnd1vmfhdapr" path="res://assets/lyd/lydeffekt/kubjelle.ogg" id="2_dnbu6"]
+[ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="3_yvqkt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4kp5y"]
+size = Vector2(16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5y5qk"]
+font = ExtResource("3_yvqkt")
+
+[node name="Inngang" type="Area2D"]
+script = ExtResource("1_bfijh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_4kp5y")
+debug_color = Color(0.058775872, 0.65022326, 5.7756904e-07, 0.41960785)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dnbu6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Varsel" type="Panel" parent="CanvasLayer"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 144.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Varsel"]
+texture_filter = 1
+layout_mode = 0
+offset_right = 134.0
+offset_bottom = 30.0
+text = "Trykk E for å gå inn"
+label_settings = SubResource("LabelSettings_5y5qk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
