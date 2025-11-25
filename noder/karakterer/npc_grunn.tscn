@@ -10,14 +10,15 @@ height = 48.0
 [node name="npc_grunn" type="Node2D"]
 
 [node name="NPC_grunn_noder" type="CharacterBody2D" parent="."]
+position = Vector2(-3, 4)
 script = ExtResource("1_68gjd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_grunn_noder"]
-position = Vector2(235, 136)
+position = Vector2(3, -4)
 shape = SubResource("CapsuleShape2D_0jcne")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_grunn_noder"]
 texture_filter = 1
-position = Vector2(238, 136)
+position = Vector2(3, -4)
 sprite_frames = ExtResource("2_wl65v")
 animation = &"idle"

@@ -21,8 +21,10 @@ func _ready():
 			sprite_node.frames = frames
 			sprite_node.animation = "idle"
 			sprite_node.play()
+			global_position = get_viewport_rect().size / 2
 
 	_choose_new_direction()
+
 
 
 func _process(delta):
@@ -36,8 +38,8 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 
-	if position.x <= 0 or position.x >= 1024 or position.y <= 0 or position.y >= 576:
-		_choose_new_direction()
+	global_position.x = clamp(global_position.x, 0, 1024)
+	global_position.y = clamp(global_position.y, 0, 576)
 
 
 func _choose_new_direction():
