@@ -1,6 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://c20bol3jrarvj"]
+[gd_scene load_steps=4 format=3 uid="uid://c20bol3jrarvj"]
 
-[ext_resource type="Script" path="res://noder/karakterer/karakter_scripts/testscript.gd" id="1_testscript"]
+[ext_resource type="Script" uid="uid://cqjqcffuusw3f" path="res://noder/karakterer/karakter_scripts/npc_grunn.gd" id="1_68gjd"]
 [ext_resource type="SpriteFrames" uid="uid://4cvcddj6p8ai" path="res://assets/grafikk/spriteframes/gris_spriteframes.tres" id="2_wl65v"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jcne"]
@@ -10,14 +10,14 @@ height = 48.0
 [node name="npc_grunn" type="Node2D"]
 
 [node name="NPC_grunn_noder" type="CharacterBody2D" parent="."]
-script = ExtResource("1_testscript")
+script = ExtResource("1_68gjd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_grunn_noder"]
+position = Vector2(235, 136)
 shape = SubResource("CapsuleShape2D_0jcne")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC_grunn_noder"]
 texture_filter = 1
+position = Vector2(238, 136)
 sprite_frames = ExtResource("2_wl65v")
-animation = &"down"
-frame = 1
-frame_progress = 0.41301557
+animation = &"idle"
