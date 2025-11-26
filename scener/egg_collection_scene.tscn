@@ -4,10 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://f62sng86m1vi" path="res://noder/spill_eggsamling/egg.tscn" id="1_dqlqv"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_50bp1"]
 [ext_resource type="Script" uid="uid://cjdxnceamj3th" path="res://noder/spill_eggsamling/eggsamling_scripts/eggspawn.gd" id="2_rlsgd"]
+[ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="5_5w4so"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d0e4d"]
 
 [node name="EggCollectionScene" type="Node2D"]
 
@@ -15,18 +14,17 @@
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="background" type="Sprite2D" parent="."]
+position = Vector2(258, 143)
 texture = ExtResource("2_50bp1")
 
 [node name="EggSpawner" type="Node2D" parent="."]
 script = ExtResource("2_rlsgd")
 egg_scene = ExtResource("1_dqlqv")
-
-[node name="ScoreLabel" type="Label" parent="EggSpawner"]
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="Egg" type="Area2D" parent="." groups=["eggs"]]
 
@@ -36,12 +34,21 @@ offset_bottom = 23.0
 shape = SubResource("CircleShape2D_xxlq0")
 
 [node name="Kurv" parent="." instance=ExtResource("1")]
-position = Vector2(400, 560)
+position = Vector2(255, 253)
+scale = Vector2(0.7, 0.7)
 collision_mask = 5
 
 [node name="Sprite2D2" type="Sprite2D" parent="Kurv"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Kurv"]
-shape = SubResource("RectangleShape2D_d0e4d")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Kurv"]
+position = Vector2(-15.5, 8.75)
+polygon = PackedVector2Array(-86.5, -55.75, -88.5, -52.75, 21.5, -51.75, 86.5, -50.75, 120.5, -47.75, 120.5, -52.75)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 57.0
+offset_bottom = 43.0
+theme_override_fonts/normal_font = ExtResource("5_5w4so")
 
 [connection signal="area_entered" from="Kurv" to="Kurv" method="_on_area_entered"]
