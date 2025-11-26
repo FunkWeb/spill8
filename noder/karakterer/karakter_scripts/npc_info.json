@@ -1,0 +1,47 @@
+{
+	"name":"npc_info",
+	"npcs": [
+		{
+			"type": "katt",
+			"name": "Mynte",
+			"greeting": "God dag! Jeg heter Mynte.",
+			"standardtext": "Huff, det er alt for lyst ute. Jeg vil bare sove.."
+		},
+		{
+			"type": "gris",
+			"name": "Siri",
+			"greeting": "Hallo! Så hyggelig å møte deg. Jeg er Siri.",
+			"standardtext": "Håper alt står bra til!"
+		},
+		{
+			"type": "rev",
+			"name": "Mikkel",
+			"greeting": "Åh! Heisann. Jeg heter Mikkel.",
+			"standardtext": "Om noen spør, lat som om du ikke har sett meg."
+		},
+		{
+			"type": "hund",
+			"name": "Ulf",
+			"greeting": "Morn'du! Jeg er Ulf.",
+			"standardtext": "Du har ikke sett en rev rundt her et sted?"
+		},
+		{
+			"type": "sau",
+			"name": "Ulla",
+			"greeting": "Heihei kjære deg! Så hyggelig. Jeg er Ulla.",
+			"standardtext": "Trøste og bæ-ære, jeg må få klipt meg før sommeren."
+		},
+		{
+			"type": "kanin",
+			"name": "Knut",
+			"greeting": "Heisann hoppsann, jeg er Knut!",
+			"standardtext": "Jeg klarte ikke å motstå, jeg har tatt litt av gulrotavlinga. Ikke si det til noen."
+		},
+		{
+			"type": "hone",
+			"name": "Hans",
+			"greeting": "ÆÆH! ..Beklager, jeg er litt skvetten nå. Jeg er Hans.",
+			"standardtext": "Jeg har hørt at det er en rev rundt her, jeg prøver å unngå han."
+		}
+	]
+}
