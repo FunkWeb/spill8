@@ -2,7 +2,9 @@ extends CharacterBody2D
 
 @export_enum("gris", "hone", "hund", "kanin", "katt", "rev", "sau") var npc_type: String = "gris"
 
-@export var npc_name: String = "Ukjent"
+var npc_name: String = "Ukjent"
+var npc_intro: String
+var npc_repeat: String
 @export var speed: float = 50.0
 
 var json_string: String = FileAccess.get_file_as_string("res://noder/karakterer/karakter_scripts/npc_info.json")
@@ -11,11 +13,16 @@ var direction: Vector2 = Vector2.ZERO
 var walk_time: float = 0.0
 var elapsed_time: float = 0.0
 
+
 func _ready():
 	json_dict = JSON.parse_string(json_string)
 	print("NPC klar:", npc_name)
-	if (json_dict):
-		print(json_dict)
+	for npc in json_dict["npcs"]:
+		if npc["type"] == npc_type: 
+			npc_name = npc["name"]
+			npc_intro = npc["greeting"]
+			npc_repeat = npc["standardtext"]
+		
 	if has_node("Label"):
 		$Label.text = npc_name
 
