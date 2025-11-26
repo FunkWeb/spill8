@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://ii4e4vg7kypr"]
+
+[ext_resource type="Texture2D" uid="uid://crechqtsuf5i1" path="res://assets/grafikk/sprites/sprt_placeholder.png" id="1_s7xd2"]
+[ext_resource type="Script" uid="uid://yhair7orc4v" path="res://noder/spill_troffeljakt/troffel.gd" id="1_yxgjw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxgjw"]
+size = Vector2(18, 18)
+
+[node name="Troffel" type="CharacterBody2D"]
+collision_layer = 4
+script = ExtResource("1_yxgjw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yxgjw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_s7xd2")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

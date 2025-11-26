@@ -1,5 +1,10 @@
-[gd_scene format=3 uid="uid://wbi0ui5fjxn0"]
+[gd_scene load_steps=3 format=3 uid="uid://wbi0ui5fjxn0"]
+
+[ext_resource type="Script" uid="uid://re7pvtxnyu4h" path="res://noder/spill_troffeljakt/troffeljakt_scripts/troffelspawn.gd" id="1_adnd5"]
+[ext_resource type="PackedScene" uid="uid://ii4e4vg7kypr" path="res://noder/spill_troffeljakt/troffel.tscn" id="1_fu4lb"]
 
 [node name="MinispillTroffeljakt" type="Node2D"]
+script = ExtResource("1_adnd5")
+troffel_scene = ExtResource("1_fu4lb")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
