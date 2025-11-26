@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bxoqki4oaohlt"]
+[gd_scene load_steps=9 format=3 uid="uid://bxoqki4oaohlt"]
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_ipip8"]
+[ext_resource type="Script" uid="uid://ccsuiwqjfmdr2" path="res://noder/karakterer/scripts/karakter.gd" id="1_yuh2m"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_2w0ah"]
-[ext_resource type="Script" uid="uid://ej7g7u22bpv1" path="res://noder/bondegard/bondegard_scripts/area_2d.gd" id="3_2w0ah"]
+[ext_resource type="Script" path="res://noder/bondegard/bondegard_scripts/area_2d.gd" id="3_2w0ah"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuh2m"]
 texture = ExtResource("2_2w0ah")
@@ -17,6 +18,7 @@ size = Vector2(144.25, 69)
 size = Vector2(61, 288)
 
 [node name="Bondegaard" type="Node2D"]
+script = ExtResource("1_yuh2m")
 
 [node name="Bakgrunn" type="Sprite2D" parent="."]
 texture = ExtResource("1_ipip8")
