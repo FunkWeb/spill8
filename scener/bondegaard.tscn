@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxoqki4oaohlt"]
+[gd_scene load_steps=10 format=3 uid="uid://bxoqki4oaohlt"]
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_ipip8"]
-[ext_resource type="Script" uid="uid://ccsuiwqjfmdr2" path="res://noder/karakterer/scripts/karakter.gd" id="1_yuh2m"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_2w0ah"]
-[ext_resource type="Script" path="res://noder/bondegard/bondegard_scripts/area_2d.gd" id="3_2w0ah"]
+[ext_resource type="Script" uid="uid://ej7g7u22bpv1" path="res://noder/bondegard/bondegard_scripts/area_2d.gd" id="3_2w0ah"]
+[ext_resource type="PackedScene" uid="uid://c20bol3jrarvj" path="res://noder/karakterer/npc_grunn.tscn" id="5_qgpxg"]
+[ext_resource type="PackedScene" uid="uid://bckg1skvm8goh" path="res://noder/karakterer/karakter.tscn" id="6_eqovg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuh2m"]
 texture = ExtResource("2_2w0ah")
@@ -18,9 +19,9 @@ size = Vector2(144.25, 69)
 size = Vector2(61, 288)
 
 [node name="Bondegaard" type="Node2D"]
-script = ExtResource("1_yuh2m")
 
 [node name="Bakgrunn" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("1_ipip8")
 
 [node name="Tekstur" type="TileMapLayer" parent="."]
@@ -80,3 +81,51 @@ shape = SubResource("RectangleShape2D_yuh2m")
 
 [node name="skilt" type="CollisionPolygon2D" parent="collisions"]
 polygon = PackedVector2Array(-234, -178, -234, -182, -238, -182, -238, -189, -234, -189, -234, -192, -230, -192, -230, -189, -226, -189, -226, -182, -230, -182, -230, -178)
+
+[node name="npc_gris" parent="collisions" instance=ExtResource("5_qgpxg")]
+position = Vector2(-225, -105)
+
+[node name="npc_hone" parent="collisions" instance=ExtResource("5_qgpxg")]
+position = Vector2(-69, 67)
+
+[node name="NPC_grunn_noder" parent="collisions/npc_hone" index="0"]
+npc_type = "hone"
+
+[node name="npc_hund" parent="collisions" instance=ExtResource("5_qgpxg")]
+position = Vector2(116, -72)
+
+[node name="NPC_grunn_noder" parent="collisions/npc_hund" index="0"]
+npc_type = "hund"
+
+[node name="npc_kanin" parent="collisions" instance=ExtResource("5_qgpxg")]
+position = Vector2(154, -182)
+
+[node name="NPC_grunn_noder" parent="collisions/npc_kanin" index="0"]
+npc_type = "kanin"
+
+[node name="npc_katt" parent="collisions" instance=ExtResource("5_qgpxg")]
+position = Vector2(140, 140)
+
+[node name="NPC_grunn_noder" parent="collisions/npc_katt" index="0"]
+npc_type = "katt"
+
+[node name="npc_rev" parent="collisions" instance=ExtResource("5_qgpxg")]
+position = Vector2(322, -77)
+
+[node name="NPC_grunn_noder" parent="collisions/npc_rev" index="0"]
+npc_type = "rev"
+
+[node name="npc_sau" parent="collisions" instance=ExtResource("5_qgpxg")]
+
+[node name="NPC_grunn_noder" parent="collisions/npc_sau" index="0"]
+npc_type = "sau"
+
+[node name="karakter" parent="collisions" instance=ExtResource("6_eqovg")]
+
+[editable path="collisions/npc_gris"]
+[editable path="collisions/npc_hone"]
+[editable path="collisions/npc_hund"]
+[editable path="collisions/npc_kanin"]
+[editable path="collisions/npc_katt"]
+[editable path="collisions/npc_rev"]
+[editable path="collisions/npc_sau"]

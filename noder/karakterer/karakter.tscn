@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://ckbwuqy7n1pba" path="res://assets/lyd/tale/talespor.ogg" id="1_81bvt"]
 [ext_resource type="Script" uid="uid://ccsuiwqjfmdr2" path="res://noder/karakterer/scripts/karakter.gd" id="1_wl65v"]
-[ext_resource type="Texture2D" uid="uid://b562ltfhehnau" path="res://assets/grafikk/ui_grafikk/placeholder-kurv.png" id="3_h8l5u"]
+[ext_resource type="Texture2D" uid="uid://crechqtsuf5i1" path="res://assets/grafikk/sprites/sprt_placeholder.png" id="3_h8l5u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81bvt"]
 size = Vector2(16, 16)
@@ -22,4 +22,7 @@ parameters/looping = true
 shape = SubResource("RectangleShape2D_81bvt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
 texture = ExtResource("3_h8l5u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
