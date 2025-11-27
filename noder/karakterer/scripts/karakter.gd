@@ -4,9 +4,35 @@ extends CharacterBody2D
 
 signal interact_pressed(body)
 
+func _ready():
+	if has_node("AnimatedSprite2D"):
+		var sprite_node = $AnimatedSprite2D
+		var loadPath = "res://assets/grafikk/sprite_resources/" + Globals.dyr[Globals.character_index] + "_animasjon.tres"
+		print(loadPath)
+		var frames = load(loadPath)
+
+		if frames:
+			sprite_node.frames = frames
+			sprite_node.animation = "default"
+			sprite_node.play()
+
+
 func get_input():
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	velocity = input_direction * speed
+	
+	if abs(input_direction.x) < abs(input_direction.y):
+		if input_direction.y > 0:
+			$AnimatedSprite2D.play("walk_down")
+		else:
+			$AnimatedSprite2D.play("walk_up")
+	elif abs(input_direction.x) > abs(input_direction.y):
+		if input_direction.x > 0:
+			$AnimatedSprite2D.play("walk_right")
+		else:
+			$AnimatedSprite2D.play("walk_left")
+	elif input_direction.x == 0 && input_direction.y == 0:
+		$AnimatedSprite2D.play("default")
 	
 func _physics_process(delta):
 	get_input()

@@ -15,6 +15,7 @@ var elapsed_time: float = 0.0
 
 
 func _ready():
+	if (npc_type == Globals.dyr[Globals.character_index]): get_parent().queue_free()
 	json_dict = JSON.parse_string(json_string)
 	print("NPC klar:", npc_name)
 	for npc in json_dict["npcs"]:
