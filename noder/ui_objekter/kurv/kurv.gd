@@ -30,3 +30,7 @@ func _physics_process(delta: float) -> void:
 		var half = size.x * 0.5
 		var vw = get_viewport_rect().size
 		position.x = clamp(position.x, half, vw.x - half)
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"): 
+		get_tree().change_scene_to_file("res://scener/hovedmeny.tscn")
