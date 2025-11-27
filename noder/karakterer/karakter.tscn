@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://ckbwuqy7n1pba" path="res://assets/lyd/tale/talespor.ogg" id="1_81bvt"]
 [ext_resource type="Script" uid="uid://ccsuiwqjfmdr2" path="res://noder/karakterer/scripts/karakter.gd" id="1_wl65v"]
-[ext_resource type="Texture2D" uid="uid://crechqtsuf5i1" path="res://assets/grafikk/sprites/sprt_placeholder.png" id="3_h8l5u"]
+[ext_resource type="SpriteFrames" uid="uid://cs2rko0pliwqf" path="res://assets/grafikk/sprite_resources/gris_animasjon.tres" id="4_qf2uv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81bvt"]
 size = Vector2(16, 16)
@@ -21,8 +21,7 @@ parameters/looping = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_81bvt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("3_h8l5u")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("4_qf2uv")
