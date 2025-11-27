@@ -1,14 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://bckg1skvm8goh"]
+[gd_scene load_steps=6 format=3 uid="uid://bckg1skvm8goh"]
 
 [ext_resource type="AudioStream" uid="uid://ckbwuqy7n1pba" path="res://assets/lyd/tale/talespor.ogg" id="1_81bvt"]
 [ext_resource type="Script" uid="uid://ccsuiwqjfmdr2" path="res://noder/karakterer/scripts/karakter.gd" id="1_wl65v"]
 [ext_resource type="SpriteFrames" uid="uid://cs2rko0pliwqf" path="res://assets/grafikk/sprite_resources/gris_animasjon.tres" id="4_qf2uv"]
+[ext_resource type="PackedScene" uid="uid://reynl82o0te2" path="res://noder/bondegard/bondegaard_dialogboks.tscn" id="4_qf2uv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81bvt"]
 size = Vector2(16, 16)
 
 [node name="karakter" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 11
 collision_mask = 3
 script = ExtResource("1_wl65v")
 
@@ -25,3 +26,4 @@ shape = SubResource("RectangleShape2D_81bvt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("4_qf2uv")
+[node name="Dialogboks" parent="Camera2D" instance=ExtResource("4_qf2uv")]

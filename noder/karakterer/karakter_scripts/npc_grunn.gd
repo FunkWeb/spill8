@@ -5,7 +5,7 @@ extends CharacterBody2D
 var npc_name: String = "Ukjent"
 var npc_intro: String
 var npc_repeat: String
-@export var speed: float = 50.0
+@export var speed: float = 15.0
 
 var json_string: String = FileAccess.get_file_as_string("res://noder/karakterer/karakter_scripts/npc_info.json")
 var json_dict
@@ -23,7 +23,12 @@ func _ready():
 			npc_name = npc["name"]
 			npc_intro = npc["greeting"]
 			npc_repeat = npc["standardtext"]
-		
+	
+	$KarakterInteract.npc_name = npc_name
+	$KarakterInteract.npc_type = npc_type
+	$KarakterInteract.greeting_text = npc_intro
+	$KarakterInteract.repeat_text = npc_repeat
+	
 	if has_node("Label"):
 		$Label.text = npc_name
 
@@ -37,7 +42,7 @@ func _ready():
 			sprite_node.frames = frames
 			sprite_node.animation = "default"
 			sprite_node.play()
-			global_position = get_viewport_rect().size / 2
+			#global_position = get_viewport_rect().size / 2
 
 	_choose_new_direction()
 
@@ -54,8 +59,8 @@ func _physics_process(delta):
 	velocity = direction * speed
 	move_and_slide()
 
-	global_position.x = clamp(global_position.x, 0, 1024)
-	global_position.y = clamp(global_position.y, 0, 576)
+	global_position.x = clamp(global_position.x, -1024, 1024)
+	global_position.y = clamp(global_position.y, -576, 576)
 
 
 func _choose_new_direction():
@@ -65,7 +70,7 @@ func _choose_new_direction():
 	var random_angle = randf_range(0, TAU)
 	direction = Vector2(cos(random_angle), sin(random_angle)).normalized()
 
-	if randi() % 5 == 0:
+	if randi() % 3 == 0:
 		direction = Vector2.ZERO
 		$AnimatedSprite2D.play("default")
 	if abs(direction.x) < abs(direction.y):
