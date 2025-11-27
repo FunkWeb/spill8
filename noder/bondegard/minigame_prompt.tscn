@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2o4ffbu46frw"]
+
+[ext_resource type="Script" uid="uid://bnkmp2e61jwld" path="res://noder/bondegard/bondegard_scripts/minigame_prompt.gd" id="1_4g3c0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_34x0u"]
+
+[node name="MinigamePrompt" type="Area2D"]
+script = ExtResource("1_4g3c0")
+metadata/_custom_type_script = "uid://b6elucvwgvaup"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_34x0u")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
