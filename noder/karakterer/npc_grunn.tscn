@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c20bol3jrarvj"]
+[gd_scene load_steps=6 format=3 uid="uid://c20bol3jrarvj"]
 
 [ext_resource type="Script" uid="uid://cqjqcffuusw3f" path="res://noder/karakterer/karakter_scripts/npc_grunn.gd" id="1_68gjd"]
 [ext_resource type="SpriteFrames" uid="uid://cs2rko0pliwqf" path="res://assets/grafikk/sprite_resources/gris_animasjon.tres" id="2_68gjd"]
+[ext_resource type="AudioStream" uid="uid://cwicu40eo6f5" path="res://assets/lyd/lydeffekt/gange.ogg" id="2_yguqy"]
 [ext_resource type="PackedScene" uid="uid://bv4b07umecj38" path="res://noder/karakterer/karakter_interact.tscn" id="3_1kwtk"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0jcne"]
@@ -14,6 +15,10 @@ height = 14.0
 position = Vector2(-3, 4)
 collision_layer = 2
 script = ExtResource("1_68gjd")
+
+[node name="Gange" type="AudioStreamPlayer2D" parent="NPC_grunn_noder"]
+stream = ExtResource("2_yguqy")
+max_distance = 83.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NPC_grunn_noder"]
 position = Vector2(3, -4)

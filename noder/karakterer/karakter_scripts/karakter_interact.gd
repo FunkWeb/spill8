@@ -8,7 +8,6 @@ var npc_type: String
 
 
 func interact(body: CharacterBody2D):
-	print(body)
 	if !greeted:
 		body.get_node("Camera2D/Dialogboks").text_box.text = greeting_text
 		greeted = true
