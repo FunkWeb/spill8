@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="1_m46b7"]
 [ext_resource type="Script" uid="uid://uuuvyhs5u2hg" path="res://noder/hovedmeny/hovedmeny.gd" id="1_w833n"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_e3k6c"]
+[ext_resource type="AudioStream" uid="uid://crp0thn0e0f2y" path="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Full.ogg" id="5_hufsq"]
 [ext_resource type="SpriteFrames" uid="uid://cs2rko0pliwqf" path="res://assets/grafikk/sprite_resources/gris_animasjon.tres" id="5_mpsd7"]
 [ext_resource type="Texture2D" uid="uid://bgqte2f1kgfr" path="res://assets/grafikk/ui_grafikk/pil.png" id="6_4t6mu"]
 
@@ -88,6 +89,11 @@ theme_override_fonts/font = ExtResource("2_e3k6c")
 theme_override_font_sizes/font_size = 22
 text = "Eggsamling"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(255, 138.405)
+stream = ExtResource("5_hufsq")
+autoplay = true
+parameters/looping = true
 [node name="kredittering_knapp" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 1

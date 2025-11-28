@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://ej7g7u22bpv1" path="res://noder/bondegard/bondegard_scripts/area_2d.gd" id="3_2w0ah"]
 [ext_resource type="PackedScene" uid="uid://c20bol3jrarvj" path="res://noder/karakterer/npc_grunn.tscn" id="5_qgpxg"]
 [ext_resource type="PackedScene" uid="uid://bckg1skvm8goh" path="res://noder/karakterer/karakter.tscn" id="6_eqovg"]
+[ext_resource type="AudioStream" uid="uid://c57ma2jutun7j" path="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Tema A.ogg" id="6_uhpna"]
 [ext_resource type="PackedScene" uid="uid://c2o4ffbu46frw" path="res://noder/bondegard/minigame_prompt.tscn" id="6_uhpna"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuh2m"]
@@ -123,6 +124,12 @@ npc_type = "sau"
 
 [node name="karakter" parent="collisions" instance=ExtResource("6_eqovg")]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(1, -138)
+stream = ExtResource("6_uhpna")
+volume_db = -5.725
+autoplay = true
+parameters/looping = true
 [node name="MinigamePrompt" parent="." instance=ExtResource("6_uhpna")]
 position = Vector2(72, -190)
 scene = "egg_collection_scene"

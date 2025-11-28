@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://crp0thn0e0f2y"
+path="res://.godot/imported/Lonely farmer_PianoGitar_Loop_Full.ogg-dfc8d306abdda59bfc0149cf8206ed29.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Full.ogg"
+dest_files=["res://.godot/imported/Lonely farmer_PianoGitar_Loop_Full.ogg-dfc8d306abdda59bfc0149cf8206ed29.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

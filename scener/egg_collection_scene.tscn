@@ -1,11 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://cp267ykfbppyp"]
+[gd_scene load_steps=8 format=3 uid="uid://cp267ykfbppyp"]
 
+[ext_resource type="PackedScene" path="res://noder/ui_objekter/kurv/kurv.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://buv7mce0hfqhu" path="res://noder/ui_objekter/kurv/kurv.tscn" id="1"]
 [ext_resource type="Script" uid="uid://y0c65alesahr" path="res://noder/spill_eggsamling/eggsamling_scripts/egg_collection_scene.gd" id="1_akaec"]
 [ext_resource type="PackedScene" uid="uid://f62sng86m1vi" path="res://noder/spill_eggsamling/egg.tscn" id="1_dqlqv"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_50bp1"]
 [ext_resource type="Script" uid="uid://cjdxnceamj3th" path="res://noder/spill_eggsamling/eggsamling_scripts/eggspawn.gd" id="2_rlsgd"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="5_5w4so"]
+[ext_resource type="AudioStream" uid="uid://h28w6a8jkvxx" path="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Tema B.ogg" id="6_ibfio"]
 [ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="7_c6sym"]
 [ext_resource type="Texture2D" uid="uid://cwspj4s8m2yty" path="res://assets/grafikk/ui_grafikk/egg_knust.png" id="8_j5y8b"]
 [ext_resource type="Texture2D" uid="uid://c84unpjheptt1" path="res://assets/grafikk/ui_grafikk/egg.png" id="9_q4xc4"]
@@ -80,6 +82,12 @@ offset_right = 57.0
 offset_bottom = 43.0
 theme_override_fonts/normal_font = ExtResource("5_5w4so")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(242.015, 150)
+stream = ExtResource("6_ibfio")
+volume_db = -7.046
+autoplay = true
+parameters/looping = true
 [node name="TimerText" type="RichTextLabel" parent="."]
 texture_filter = 1
 anchors_preset = 12
