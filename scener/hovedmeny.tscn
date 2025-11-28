@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://6kqkq2b1dv3v"]
+[gd_scene load_steps=6 format=3 uid="uid://byo771ssl4b4l"]
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_8pb1i"]
 [ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="1_m46b7"]
 [ext_resource type="Script" uid="uid://uuuvyhs5u2hg" path="res://noder/hovedmeny/hovedmeny.gd" id="1_w833n"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_e3k6c"]
+[ext_resource type="AudioStream" uid="uid://crp0thn0e0f2y" path="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Full.ogg" id="5_hufsq"]
 
 [node name="hovedmeny" type="Control"]
 layout_mode = 3
@@ -85,6 +86,12 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("2_e3k6c")
 theme_override_font_sizes/font_size = 22
 text = "Eggsamling"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(255, 138.405)
+stream = ExtResource("5_hufsq")
+autoplay = true
+parameters/looping = true
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="avslutt" to="." method="_on_avslutt_pressed"]
