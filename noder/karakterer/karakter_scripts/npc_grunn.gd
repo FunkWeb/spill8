@@ -17,12 +17,13 @@ var elapsed_time: float = 0.0
 func _ready():
 	if (npc_type == Globals.dyr[Globals.character_index]): get_parent().queue_free()
 	json_dict = JSON.parse_string(json_string)
-	print("NPC klar:", npc_name)
+
 	for npc in json_dict["npcs"]:
 		if npc["type"] == npc_type: 
 			npc_name = npc["name"]
 			npc_intro = npc["greeting"]
 			npc_repeat = npc["standardtext"]
+		print("NPC klar:", npc_name)
 	
 	$KarakterInteract.npc_name = npc_name
 	$KarakterInteract.npc_type = npc_type
@@ -61,6 +62,11 @@ func _physics_process(delta):
 
 	global_position.x = clamp(global_position.x, -1024, 1024)
 	global_position.y = clamp(global_position.y, -576, 576)
+	if velocity.x != 0 && velocity.y != 0 && !$Gange.playing:
+		$Gange.pitch_scale = 1.5 - (randf() / 2)
+		$Gange.play(0.12)
+	elif(velocity.x == 0 && velocity.y == 0):
+		$Gange.stop()
 
 
 func _choose_new_direction():

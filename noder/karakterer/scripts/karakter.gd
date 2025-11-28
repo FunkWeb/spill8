@@ -34,9 +34,14 @@ func get_input():
 	elif input_direction.x == 0 && input_direction.y == 0:
 		$AnimatedSprite2D.play("default")
 	
-func _physics_process(delta):
+func _physics_process(_delta):
 	get_input()
 	move_and_slide()
+	if velocity.x != 0 && velocity.y != 0 && !$Gange.playing:
+		$Gange.pitch_scale = 1.5 - (randf() / 2)
+		$Gange.play(0.12)
+	elif(velocity.x == 0 && velocity.y == 0):
+		$Gange.stop()
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"): 

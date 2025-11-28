@@ -2,8 +2,8 @@
 
 [ext_resource type="AudioStream" uid="uid://ckbwuqy7n1pba" path="res://assets/lyd/tale/talespor.ogg" id="1_81bvt"]
 [ext_resource type="Script" uid="uid://ccsuiwqjfmdr2" path="res://noder/karakterer/scripts/karakter.gd" id="1_wl65v"]
-[ext_resource type="SpriteFrames" uid="uid://cs2rko0pliwqf" path="res://assets/grafikk/sprite_resources/gris_animasjon.tres" id="4_qf2uv"]
 [ext_resource type="PackedScene" uid="uid://reynl82o0te2" path="res://noder/bondegard/bondegaard_dialogboks.tscn" id="4_qf2uv"]
+[ext_resource type="AudioStream" uid="uid://cwicu40eo6f5" path="res://assets/lyd/lydeffekt/gange.ogg" id="4_xq8wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81bvt"]
 size = Vector2(16, 16)
@@ -15,7 +15,8 @@ script = ExtResource("1_wl65v")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_81bvt")
-volume_db = 0.2
+volume_db = -7.105
+pitch_scale = 0.89
 autoplay = true
 parameters/looping = true
 
@@ -24,6 +25,10 @@ shape = SubResource("RectangleShape2D_81bvt")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("4_qf2uv")
 [node name="Dialogboks" parent="Camera2D" instance=ExtResource("4_qf2uv")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Gange" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xq8wm")
+max_distance = 149.0
