@@ -1,5 +1,7 @@
 extends Control
 
+func _ready() -> void:
+	setCharacterSprite()
 
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://scener/bondegaard.tscn")

@@ -10,7 +10,7 @@ func _ready():
 	if egg_scene == null:
 		push_error("egg_scene not assigned!")
 		return
-
+	
 	spawn_egg()
 
 func spawn_egg() -> void:
@@ -18,7 +18,9 @@ func spawn_egg() -> void:
 	if egg == null:
 		push_error("Failed to instantiate egg_scene!")
 		return
-
+		
+	egg.fall_gravity *= 1.10 ** score
+	
 	var x_pos = randf_range(0.0, spawn_area_width)
 	egg.position = Vector2(x_pos, top_y)
 	add_child(egg)
@@ -33,3 +35,6 @@ func egg_caught():
 	score += 1
 	print("Score is now: ", score)
 	get_parent().get_node("RichTextLabel").text = str(score)
+	
+	
+	

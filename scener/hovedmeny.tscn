@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://6kqkq2b1dv3v"]
+[gd_scene load_steps=7 format=3 uid="uid://6kqkq2b1dv3v"]
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_8pb1i"]
 [ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="1_m46b7"]
 [ext_resource type="Script" uid="uid://uuuvyhs5u2hg" path="res://noder/hovedmeny/hovedmeny.gd" id="1_w833n"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_e3k6c"]
+[ext_resource type="SpriteFrames" uid="uid://cs2rko0pliwqf" path="res://assets/grafikk/sprite_resources/gris_animasjon.tres" id="5_mpsd7"]
+[ext_resource type="Texture2D" uid="uid://bgqte2f1kgfr" path="res://assets/grafikk/ui_grafikk/pil.png" id="6_4t6mu"]
 
 [node name="hovedmeny" type="Control"]
 layout_mode = 3
