@@ -104,28 +104,6 @@ theme_override_fonts/font = ExtResource("2_e3k6c")
 theme_override_font_sizes/font_size = 31
 text = "Kredittering"
 
-[node name="Krediteringstekst" type="RichTextLabel" parent="."]
-
-text = "
-[center]Tech Lead[/center]
-[center][b]Hans Emil Eid[/b][/center]
-
-[center]Ideer[/center]
-[center][b]Bjørn Gamst[/b][/center]
-
-[center]Testanalytiker[/center]
-[center][b]Sunanda P. Gupta[/b][/center]
-
-[center]Utviklere[/center]
-[center][b]edvard A[/b][/center]
-[center][b]Max[/b][/center]
-[center][b]Jonis[/b][/center]
-[center][b]Marshall Anike[/b][/center]
-[center][b]Evard Arka Menart[/b][/center]
-[center][b]Dennis A. A.[/b][/center]
-
-"
-
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="avslutt" to="." method="_on_avslutt_pressed"]
 [connection signal="pressed" from="eggsamling" to="." method="_on_eggsamling_pressed"]
