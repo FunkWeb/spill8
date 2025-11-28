@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://6kqkq2b1dv3v"]
+[gd_scene load_steps=5 format=3 uid="uid://6kqkq2b1dv3v"]
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_8pb1i"]
 [ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="1_m46b7"]
@@ -91,22 +91,55 @@ text = "Eggsamling"
 [node name="kredittering_knapp" type="Button" parent="."]
 texture_filter = 1
 layout_mode = 1
-anchors_preset = 6 ;
-anchor_left = 1.0  ;
-anchor_top = 0.5   ; 
-anchor_right = 1.0 ; 
-anchor_bottom = 0.5 ; 
-offset_left = -150.0 ; 
-offset_top = -25.0   ; 
-offset_right = -10.0 ; 
-offset_bottom = 25.0  ; 
-grow_horizontal = 0 ; 
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+offset_right = -10.0
+offset_bottom = 25.0
+grow_horizontal = 0
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_e3k6c")
 theme_override_font_sizes/font_size = 31
 text = "Kredittering"
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(77, 210)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("5_mpsd7")
+
+[node name="forrige" type="Button" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 207.0
+offset_right = 61.0
+offset_bottom = 223.0
+
+[node name="Pil" type="Sprite2D" parent="forrige"]
+texture_filter = 1
+texture = ExtResource("6_4t6mu")
+offset = Vector2(4, 8)
+
+[node name="neste" type="Button" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 207.0
+offset_right = 109.0
+offset_bottom = 223.0
+
+[node name="Pil" type="Sprite2D" parent="neste"]
+texture_filter = 1
+scale = Vector2(-1, 1)
+texture = ExtResource("6_4t6mu")
+offset = Vector2(-12, 8)
+
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="avslutt" to="." method="_on_avslutt_pressed"]
 [connection signal="pressed" from="eggsamling" to="." method="_on_eggsamling_pressed"]
 [connection signal="pressed" from="kredittering_knapp" to="." method="_on_kredittering_knapp_pressed"]
+[connection signal="pressed" from="forrige" to="." method="_on_forrige_pressed"]
+[connection signal="pressed" from="neste" to="." method="_on_neste_pressed"]

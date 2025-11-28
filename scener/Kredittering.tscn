@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_8pb1i"]
 [ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="1_m46b7"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_e3k6c"]
-[ext_resource type="Script" uid="uid://yyyyyyy" path="res://scener/Kredittering/Kredittering.gd" id="3_script"]
+[ext_resource type="Script" uid="uid://c6l5mlk446ei7" path="res://noder/Kredittering/Kredittering.gd" id="3_script"]
 
 [node name="Kredittering" type="Control"] ; Riktig Rot-node for UI
 layout_mode = 3
