@@ -1,11 +1,7 @@
-extends Node
+# kredittering.gd
+extends Control
 
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+# Funksjon som kalles når 'Tilbake'-knappen trykkes
+func _on_tilbake_knapp_pressed():
+	# Last inn hovedmenyen på nytt og bytt scene
+	get_tree().change_scene_to_file("res://scener/hovedmeny/hovedmeny.tscn")
