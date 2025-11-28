@@ -29,6 +29,7 @@ func spawn_egg() -> void:
 	egg.connect("egg_fallen", Callable(self, "_on_egg_fallen"))
 
 func _on_egg_fallen() -> void:
+	get_parent().healthLoss()
 	spawn_egg()
 
 func egg_caught():

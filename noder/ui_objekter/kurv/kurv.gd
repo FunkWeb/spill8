@@ -27,9 +27,9 @@ func _physics_process(delta: float) -> void:
 		position.x += dir * speed * delta
 
 	if clamp_to_viewport:
-		var half = size.x * 0.5
+		var qrt = size.x * 0.25
 		var vw = get_viewport_rect().size
-		position.x = clamp(position.x, half, vw.x - half)
+		position.x = clamp(position.x, qrt, vw.x - qrt)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"): 
