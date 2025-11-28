@@ -1,15 +1,49 @@
 [gd_scene load_steps=8 format=3 uid="uid://cp267ykfbppyp"]
 
 [ext_resource type="PackedScene" path="res://noder/ui_objekter/kurv/kurv.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://buv7mce0hfqhu" path="res://noder/ui_objekter/kurv/kurv.tscn" id="1"]
+[ext_resource type="Script" uid="uid://y0c65alesahr" path="res://noder/spill_eggsamling/eggsamling_scripts/egg_collection_scene.gd" id="1_akaec"]
 [ext_resource type="PackedScene" uid="uid://f62sng86m1vi" path="res://noder/spill_eggsamling/egg.tscn" id="1_dqlqv"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_50bp1"]
 [ext_resource type="Script" uid="uid://cjdxnceamj3th" path="res://noder/spill_eggsamling/eggsamling_scripts/eggspawn.gd" id="2_rlsgd"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="5_5w4so"]
 [ext_resource type="AudioStream" uid="uid://h28w6a8jkvxx" path="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Tema B.ogg" id="6_ibfio"]
+[ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="7_c6sym"]
+[ext_resource type="Texture2D" uid="uid://cwspj4s8m2yty" path="res://assets/grafikk/ui_grafikk/egg_knust.png" id="8_j5y8b"]
+[ext_resource type="Texture2D" uid="uid://c84unpjheptt1" path="res://assets/grafikk/ui_grafikk/egg.png" id="9_q4xc4"]
+[ext_resource type="Theme" uid="uid://dwle3jo27ydun" path="res://assets/grafikk/ui_grafikk/ui_theme.tres" id="10_c6sym"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqluo"]
+atlas = ExtResource("8_j5y8b")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xrmhp"]
+atlas = ExtResource("9_q4xc4")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_65rg0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqluo")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xrmhp")
+}],
+"loop": false,
+"name": &"whole",
+"speed": 5.0
+}]
+
 [node name="EggCollectionScene" type="Node2D"]
+script = ExtResource("1_akaec")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -35,15 +69,11 @@ egg_scene = ExtResource("1_dqlqv")
 shape = SubResource("CircleShape2D_xxlq0")
 
 [node name="Kurv" parent="." instance=ExtResource("1")]
-position = Vector2(255, 253)
-scale = Vector2(0.7, 0.7)
+position = Vector2(263, 262)
 collision_mask = 5
 
-[node name="Sprite2D2" type="Sprite2D" parent="Kurv"]
-
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Kurv"]
-position = Vector2(-15.5, 8.75)
-polygon = PackedVector2Array(-86.5, -55.75, -88.5, -52.75, 21.5, -51.75, 86.5, -50.75, 120.5, -47.75, 120.5, -52.75)
+polygon = PackedVector2Array(-24, 0, 24, 0, 24, 8, -24, 8)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 17.0
@@ -58,5 +88,206 @@ stream = ExtResource("6_ibfio")
 volume_db = -7.046
 autoplay = true
 parameters/looping = true
+[node name="TimerText" type="RichTextLabel" parent="."]
+texture_filter = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 472.0
+offset_right = 512.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_fonts/normal_font = ExtResource("7_c6sym")
+theme_override_font_sizes/normal_font_size = 36
+text = "30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Liv1" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(493, 43)
+sprite_frames = SubResource("SpriteFrames_65rg0")
+animation = &"whole"
+autoplay = "whole"
+
+[node name="Liv3" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(493, 89)
+sprite_frames = SubResource("SpriteFrames_65rg0")
+animation = &"whole"
+autoplay = "whole"
+
+[node name="Liv2" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(493, 66)
+sprite_frames = SubResource("SpriteFrames_65rg0")
+animation = &"whole"
+autoplay = "whole"
+
+[node name="Pauseskjerm" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 512.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.05882353, 0.078431375, 0.16078432, 0.41960785)
+
+[node name="ColorRect" type="ColorRect" parent="Pauseskjerm"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -180.0
+offset_top = -90.0
+offset_right = 180.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.41568628, 0.27058825, 0.1764706, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Pauseskjerm/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.0
+offset_top = -80.0
+offset_right = 170.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8392157, 0.6862745, 0.54509807, 1)
+
+[node name="MenyKnapp" type="Button" parent="Pauseskjerm"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = 72.0
+offset_right = 59.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_c6sym")
+theme_override_colors/font_color = Color(0.30588236, 0.29803923, 0.2901961, 1)
+theme_override_colors/icon_normal_color = Color(0.7411765, 0.6862745, 0.62352943, 1)
+theme_override_colors/icon_focus_color = Color(0.7411765, 0.6862745, 0.62352943, 1)
+theme_override_colors/icon_pressed_color = Color(0.42352942, 0.39215687, 0.35686275, 1)
+theme_override_colors/icon_hover_color = Color(0.5764706, 0.53333336, 0.4862745, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.5764706, 0.53333336, 0.4862745, 1)
+theme_override_fonts/font = ExtResource("5_5w4so")
+theme_override_font_sizes/font_size = 16
+text = "Hovedmeny"
+
+[node name="RestartKnapp" type="Button" parent="Pauseskjerm"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -189.0
+offset_top = 72.0
+offset_right = -71.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_c6sym")
+theme_override_colors/font_color = Color(0.30588236, 0.29803923, 0.2901961, 1)
+theme_override_colors/icon_normal_color = Color(0.7411765, 0.6862745, 0.62352943, 1)
+theme_override_colors/icon_focus_color = Color(0.7411765, 0.6862745, 0.62352943, 1)
+theme_override_colors/icon_pressed_color = Color(0.42352942, 0.39215687, 0.35686275, 1)
+theme_override_colors/icon_hover_color = Color(0.5764706, 0.53333336, 0.4862745, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.5764706, 0.53333336, 0.4862745, 1)
+theme_override_fonts/font = ExtResource("5_5w4so")
+theme_override_font_sizes/font_size = 16
+text = "Spill igjen"
+
+[node name="Overskrift" type="RichTextLabel" parent="Pauseskjerm"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -70.0
+offset_right = 100.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.30588236, 0.29803923, 0.2901961, 1)
+theme_override_fonts/normal_font = ExtResource("7_c6sym")
+theme_override_font_sizes/normal_font_size = 36
+text = "AVSLUTT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tekst" type="RichTextLabel" parent="Pauseskjerm"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -32.0
+offset_right = 160.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.30588236, 0.29803923, 0.2901961, 1)
+theme_override_fonts/normal_font = ExtResource("5_5w4so")
+text = "Dette er en testtekst"
+
+[node name="Gardsknapp" type="Button" parent="Pauseskjerm"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 71.0
+offset_top = 72.0
+offset_right = 189.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("10_c6sym")
+theme_override_colors/font_color = Color(0.30588236, 0.29803923, 0.2901961, 1)
+theme_override_colors/icon_normal_color = Color(0.7411765, 0.6862745, 0.62352943, 1)
+theme_override_colors/icon_focus_color = Color(0.7411765, 0.6862745, 0.62352943, 1)
+theme_override_colors/icon_pressed_color = Color(0.42352942, 0.39215687, 0.35686275, 1)
+theme_override_colors/icon_hover_color = Color(0.5764706, 0.53333336, 0.4862745, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0.5764706, 0.53333336, 0.4862745, 1)
+theme_override_fonts/font = ExtResource("5_5w4so")
+theme_override_font_sizes/font_size = 16
+text = "Tilbake til Gården"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
 
 [connection signal="area_entered" from="Kurv" to="Kurv" method="_on_area_entered"]
+[connection signal="pressed" from="Pauseskjerm/MenyKnapp" to="." method="menyKnapp"]
+[connection signal="pressed" from="Pauseskjerm/RestartKnapp" to="." method="restartKnapp"]
+[connection signal="pressed" from="Pauseskjerm/Gardsknapp" to="." method="gardsKnapp"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://byo771ssl4b4l"]
+[gd_scene load_steps=7 format=3 uid="uid://6kqkq2b1dv3v"]
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_8pb1i"]
 [ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="1_m46b7"]
 [ext_resource type="Script" uid="uid://uuuvyhs5u2hg" path="res://noder/hovedmeny/hovedmeny.gd" id="1_w833n"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_e3k6c"]
 [ext_resource type="AudioStream" uid="uid://crp0thn0e0f2y" path="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Full.ogg" id="5_hufsq"]
+[ext_resource type="SpriteFrames" uid="uid://cs2rko0pliwqf" path="res://assets/grafikk/sprite_resources/gris_animasjon.tres" id="5_mpsd7"]
+[ext_resource type="Texture2D" uid="uid://bgqte2f1kgfr" path="res://assets/grafikk/ui_grafikk/pil.png" id="6_4t6mu"]
 
 [node name="hovedmeny" type="Control"]
 layout_mode = 3
@@ -92,7 +94,39 @@ position = Vector2(255, 138.405)
 stream = ExtResource("5_hufsq")
 autoplay = true
 parameters/looping = true
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(77, 210)
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("5_mpsd7")
+
+[node name="forrige" type="Button" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 207.0
+offset_right = 61.0
+offset_bottom = 223.0
+
+[node name="Pil" type="Sprite2D" parent="forrige"]
+texture_filter = 1
+texture = ExtResource("6_4t6mu")
+offset = Vector2(4, 8)
+
+[node name="neste" type="Button" parent="."]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 207.0
+offset_right = 109.0
+offset_bottom = 223.0
+
+[node name="Pil" type="Sprite2D" parent="neste"]
+texture_filter = 1
+scale = Vector2(-1, 1)
+texture = ExtResource("6_4t6mu")
+offset = Vector2(-12, 8)
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="avslutt" to="." method="_on_avslutt_pressed"]
 [connection signal="pressed" from="eggsamling" to="." method="_on_eggsamling_pressed"]
+[connection signal="pressed" from="forrige" to="." method="_on_forrige_pressed"]
+[connection signal="pressed" from="neste" to="." method="_on_neste_pressed"]

@@ -1,28 +1,34 @@
-[gd_scene load_steps=5 format=3 uid="uid://bckg1skvm8goh"]
+[gd_scene load_steps=6 format=3 uid="uid://bckg1skvm8goh"]
 
 [ext_resource type="AudioStream" uid="uid://ckbwuqy7n1pba" path="res://assets/lyd/tale/talespor.ogg" id="1_81bvt"]
 [ext_resource type="Script" uid="uid://ccsuiwqjfmdr2" path="res://noder/karakterer/scripts/karakter.gd" id="1_wl65v"]
-[ext_resource type="Texture2D" uid="uid://crechqtsuf5i1" path="res://assets/grafikk/sprites/sprt_placeholder.png" id="3_h8l5u"]
+[ext_resource type="PackedScene" uid="uid://reynl82o0te2" path="res://noder/bondegard/bondegaard_dialogboks.tscn" id="4_qf2uv"]
+[ext_resource type="AudioStream" uid="uid://cwicu40eo6f5" path="res://assets/lyd/lydeffekt/gange.ogg" id="4_xq8wm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81bvt"]
 size = Vector2(16, 16)
 
 [node name="karakter" type="CharacterBody2D"]
-collision_layer = 3
+collision_layer = 11
 collision_mask = 3
 script = ExtResource("1_wl65v")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("1_81bvt")
-volume_db = 0.2
+volume_db = -7.105
+pitch_scale = 0.89
 autoplay = true
 parameters/looping = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_81bvt")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-texture = ExtResource("3_h8l5u")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Dialogboks" parent="Camera2D" instance=ExtResource("4_qf2uv")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="Gange" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_xq8wm")
+max_distance = 149.0
