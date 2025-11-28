@@ -1,0 +1,95 @@
+[gd_scene load_steps=5 format=3 uid="uid://b58v8vb15kitr"]
+
+[ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_8pb1i"]
+[ext_resource type="FontFile" uid="uid://c545o4sls36do" path="res://assets/fonter/Pixel Game.otf" id="1_m46b7"]
+[ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="2_e3k6c"]
+[ext_resource type="Script" uid="uid://c6l5mlk446ei7" path="res://noder/Kredittering/Kredittering.gd" id="3_script"]
+
+[node name="Kredittering" type="Control"] ; Riktig Rot-node for UI
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_script") ; Kobler scriptet
+
+[node name="Bakgrunn" type="TextureRect" parent="."]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_8pb1i") ; Bakgrunn vises
+expand_mode = 1
+
+[node name="Tittel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_right = 150.0
+offset_bottom = 60.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_m46b7")
+theme_override_font_sizes/font_size = 60
+text = "KREDITTERING"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Krediteringstekst" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -80.0 ; Plassering for å vise teksten
+offset_right = 200.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("2_e3k6c")
+theme_override_font_sizes/normal_font_size = 24
+bbcode_enabled = true
+text = "
+[center]Tech Lead[/center]
+[center][b]Hans Emil Eid[/b][/center]
+
+[center]Ideer[/center]
+[center][b]Bjørn Gamst[/b][/center]
+
+[center]Testanalytiker[/center]
+[center][b]Sunanda P. Gupta[/b][/center]
+
+[center]Utviklere[/center]
+[center][b]edvard A[/b][/center]
+[center][b]Max[/b][/center]
+[center][b]Jonis[/b][/center]
+[center][b]Marshall Anike[/b][/center]
+[center][b]Evard Arka Menart[/b][/center]
+[center][b]Dennis A. A.[/b][/center]
+
+"
+[node name="TilbakeKnapp" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -60.0
+offset_right = 70.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_e3k6c")
+theme_override_font_sizes/font_size = 30
+text = "Tilbake"
+
+[connection signal="pressed" from="TilbakeKnapp" to="." method="_on_tilbake_knapp_pressed"]
