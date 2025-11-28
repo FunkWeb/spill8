@@ -8,6 +8,7 @@ var velocity := Vector2.ZERO
 
 func _ready():
 	add_to_group("eggs")   
+	
 func _physics_process(delta):
 	velocity.y += fall_gravity * delta
 	position += velocity * delta
