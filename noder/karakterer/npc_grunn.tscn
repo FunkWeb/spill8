@@ -31,4 +31,3 @@ sprite_frames = ExtResource("2_68gjd")
 
 [node name="KarakterInteract" parent="NPC_grunn_noder" instance=ExtResource("3_1kwtk")]
 position = Vector2(3, -4)
-scale = Vector2(1.5, 1.5)
