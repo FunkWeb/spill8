@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bx56n106la1fr" path="res://assets/grafikk/bakgrunner/bakgrunn.png" id="1_ipip8"]
 [ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_2w0ah"]
-[ext_resource type="Script" uid="uid://ej7g7u22bpv1" path="res://noder/bondegard/bondegard_scripts/area_2d.gd" id="3_2w0ah"]
+[ext_resource type="Script" path="res://noder/bondegard/bondegard_scripts/area_2d.gd" id="3_2w0ah"]
 [ext_resource type="PackedScene" uid="uid://c20bol3jrarvj" path="res://noder/karakterer/npc_grunn.tscn" id="5_qgpxg"]
 [ext_resource type="PackedScene" uid="uid://bckg1skvm8goh" path="res://noder/karakterer/karakter.tscn" id="6_eqovg"]
 [ext_resource type="AudioStream" uid="uid://c57ma2jutun7j" path="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Tema A.ogg" id="6_hscwm"]

@@ -18,7 +18,13 @@ func interact(body: CharacterBody2D):
 
 	super(body)
 
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "karakter":
+		$AnimatedSprite2D.visible = true
+	super(body)
+
 func _on_body_exited(body: Node2D) -> void:
 	if body.name == "karakter":
 		body.get_node("Camera2D/Dialogboks").visible = false
+		$AnimatedSprite2D.visible = false
 	super(body)
