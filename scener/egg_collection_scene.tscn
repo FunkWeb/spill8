@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cp267ykfbppyp"]
+[gd_scene load_steps=18 format=3 uid="uid://cp267ykfbppyp"]
 
 [ext_resource type="PackedScene" uid="uid://buv7mce0hfqhu" path="res://noder/ui_objekter/kurv/kurv.tscn" id="1"]
 [ext_resource type="Script" uid="uid://y0c65alesahr" path="res://noder/spill_eggsamling/eggsamling_scripts/egg_collection_scene.gd" id="1_akaec"]
@@ -42,6 +42,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_q4xc4"]
+
 [node name="EggCollectionScene" type="Node2D"]
 script = ExtResource("1_akaec")
 
@@ -55,13 +57,14 @@ color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="background" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(255, 105.99999)
+position = Vector2(255, 155)
 scale = Vector2(0.18, 0.18)
 texture = ExtResource("2_j5y8b")
 region_enabled = true
 region_rect = Rect2(13.89, 0, 2869.6716, 2114.4893)
 
 [node name="ColorRect" type="ColorRect" parent="background"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -71,7 +74,7 @@ offset_right = -1434.5
 offset_bottom = -1057.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.26666668, 0.27450982, 0.3137255, 0.32156864)
+color = Color(0.05882353, 0.078431375, 0.16078432, 0.41960785)
 
 [node name="EggSpawner" type="Node2D" parent="."]
 script = ExtResource("2_rlsgd")
@@ -93,9 +96,9 @@ polygon = PackedVector2Array(-24, 0, 24, 0, 24, 8, -24, 8)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 17.0
-offset_top = 27.0
+offset_top = 75.0
 offset_right = 57.0
-offset_bottom = 50.0
+offset_bottom = 98.0
 theme_override_colors/default_color = Color(1, 0.94509804, 0.8784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_5w4so")
 
@@ -113,9 +116,9 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 472.0
-offset_top = -1.0
+offset_top = 22.0
 offset_right = 512.0
-offset_bottom = 39.0
+offset_bottom = 62.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/default_color = Color(0.30588236, 0.29803923, 0.2901961, 1)
@@ -127,21 +130,21 @@ vertical_alignment = 1
 
 [node name="Liv1" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(493, 43)
+position = Vector2(493, 66)
 sprite_frames = SubResource("SpriteFrames_65rg0")
 animation = &"whole"
 autoplay = "whole"
 
 [node name="Liv3" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(493, 89)
+position = Vector2(493, 112)
 sprite_frames = SubResource("SpriteFrames_65rg0")
 animation = &"whole"
 autoplay = "whole"
 
 [node name="Liv2" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(493, 66)
+position = Vector2(493, 89)
 sprite_frames = SubResource("SpriteFrames_65rg0")
 animation = &"whole"
 autoplay = "whole"
@@ -308,8 +311,8 @@ wait_time = 30.0
 autostart = true
 
 [node name="MinispillHone" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
+material = SubResource("CanvasItemMaterial_q4xc4")
 texture = ExtResource("12_q4xc4")
 centered = false
 
