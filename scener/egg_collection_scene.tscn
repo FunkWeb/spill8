@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cp267ykfbppyp"]
+[gd_scene load_steps=17 format=3 uid="uid://cp267ykfbppyp"]
 
-[ext_resource type="PackedScene" path="res://noder/ui_objekter/kurv/kurv.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://buv7mce0hfqhu" path="res://noder/ui_objekter/kurv/kurv.tscn" id="1"]
 [ext_resource type="Script" uid="uid://y0c65alesahr" path="res://noder/spill_eggsamling/eggsamling_scripts/egg_collection_scene.gd" id="1_akaec"]
 [ext_resource type="PackedScene" uid="uid://f62sng86m1vi" path="res://noder/spill_eggsamling/egg.tscn" id="1_dqlqv"]
-[ext_resource type="Texture2D" uid="uid://b53p6samak6mi" path="res://assets/grafikk/tilesett/bg_placeholder.png" id="2_50bp1"]
+[ext_resource type="Texture2D" uid="uid://hatimr68ub46" path="res://assets/grafikk/bakgrunner/honsehus_bg.png" id="2_j5y8b"]
 [ext_resource type="Script" uid="uid://cjdxnceamj3th" path="res://noder/spill_eggsamling/eggsamling_scripts/eggspawn.gd" id="2_rlsgd"]
 [ext_resource type="FontFile" uid="uid://s8nuigpisayb" path="res://assets/fonter/MedodicaRegular.otf" id="5_5w4so"]
 [ext_resource type="AudioStream" uid="uid://h28w6a8jkvxx" path="res://assets/lyd/musikk/Lonely farmer_PianoGitar_Loop_Tema B.ogg" id="6_ibfio"]
@@ -12,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cwspj4s8m2yty" path="res://assets/grafikk/ui_grafikk/egg_knust.png" id="8_j5y8b"]
 [ext_resource type="Texture2D" uid="uid://c84unpjheptt1" path="res://assets/grafikk/ui_grafikk/egg.png" id="9_q4xc4"]
 [ext_resource type="Theme" uid="uid://dwle3jo27ydun" path="res://assets/grafikk/ui_grafikk/ui_theme.tres" id="10_c6sym"]
+[ext_resource type="Texture2D" uid="uid://qmunyox7uaj1" path="res://assets/grafikk/sprites/minispill_hone.png" id="12_q4xc4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xxlq0"]
 
@@ -54,8 +54,24 @@ grow_vertical = 2
 color = Color(0.2, 0.2, 0.2, 1)
 
 [node name="background" type="Sprite2D" parent="."]
-position = Vector2(258, 143)
-texture = ExtResource("2_50bp1")
+texture_filter = 1
+position = Vector2(255, 105.99999)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("2_j5y8b")
+region_enabled = true
+region_rect = Rect2(13.89, 0, 2869.6716, 2114.4893)
+
+[node name="ColorRect" type="ColorRect" parent="background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1434.5
+offset_top = -1057.0
+offset_right = -1434.5
+offset_bottom = -1057.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.26666668, 0.27450982, 0.3137255, 0.32156864)
 
 [node name="EggSpawner" type="Node2D" parent="."]
 script = ExtResource("2_rlsgd")
@@ -77,9 +93,10 @@ polygon = PackedVector2Array(-24, 0, 24, 0, 24, 8, -24, 8)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 offset_left = 17.0
-offset_top = 20.0
+offset_top = 27.0
 offset_right = 57.0
-offset_bottom = 43.0
+offset_bottom = 50.0
+theme_override_colors/default_color = Color(1, 0.94509804, 0.8784314, 1)
 theme_override_fonts/normal_font = ExtResource("5_5w4so")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
@@ -88,6 +105,7 @@ stream = ExtResource("6_ibfio")
 volume_db = -7.046
 autoplay = true
 parameters/looping = true
+
 [node name="TimerText" type="RichTextLabel" parent="."]
 texture_filter = 1
 anchors_preset = 12
@@ -95,9 +113,12 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 472.0
+offset_top = -1.0
 offset_right = 512.0
-offset_bottom = 40.0
-grow_horizontal = 0
+offset_bottom = 39.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0.30588236, 0.29803923, 0.2901961, 1)
 theme_override_fonts/normal_font = ExtResource("7_c6sym")
 theme_override_font_sizes/normal_font_size = 36
 text = "30"
@@ -285,6 +306,12 @@ text = "Tilbake til Gården"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 30.0
 autostart = true
+
+[node name="MinispillHone" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+texture = ExtResource("12_q4xc4")
+centered = false
 
 [connection signal="area_entered" from="Kurv" to="Kurv" method="_on_area_entered"]
 [connection signal="pressed" from="Pauseskjerm/MenyKnapp" to="." method="menyKnapp"]

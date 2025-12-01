@@ -19,14 +19,16 @@ func spawn_egg() -> void:
 		push_error("Failed to instantiate egg_scene!")
 		return
 		
-	egg.fall_gravity *= 1.10 ** score
+	egg.fall_gravity *= 1.07 ** score
 	
 	var x_pos = randf_range(0.0, spawn_area_width)
-	egg.position = Vector2(x_pos, top_y)
+	egg.position = Vector2(x_pos, top_y+28)
 	add_child(egg)
 
 	egg.add_to_group("eggs")
 	egg.connect("egg_fallen", Callable(self, "_on_egg_fallen"))
+	$"../MinispillHone".position.x = x_pos-24
+	$"../MinispillHone".visible = true
 
 func _on_egg_fallen() -> void:
 	get_parent().healthLoss()
