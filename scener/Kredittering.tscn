@@ -25,7 +25,23 @@ grow_vertical = 2
 texture = ExtResource("1_8pb1i")
 expand_mode = 1
 
+[node name="ColorRect" type="ColorRect" parent="Bakgrunn"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -176.0
+offset_top = -80.0
+offset_right = 176.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05882353, 0.078431375, 0.16078432, 0.41960785)
+
 [node name="Tittel" type="Label" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -34,6 +50,7 @@ offset_left = -150.0
 offset_right = 150.0
 offset_bottom = 60.0
 grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.94509804, 0.8784314, 1)
 theme_override_fonts/font = ExtResource("1_m46b7")
 theme_override_font_sizes/font_size = 60
 text = "KREDITTERING"
@@ -41,6 +58,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Krediteringstekst" type="RichTextLabel" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -53,30 +71,61 @@ offset_right = 200.0
 offset_bottom = 80.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("2_e3k6c")
-theme_override_font_sizes/normal_font_size = 24
+theme_override_colors/default_color = Color(1, 0.94509804, 0.8784314, 1)
+theme_override_fonts/normal_font = ExtResource("1_m46b7")
+theme_override_fonts/bold_font = ExtResource("2_e3k6c")
+theme_override_font_sizes/normal_font_size = 31
+theme_override_font_sizes/bold_font_size = 32
 bbcode_enabled = true
-text = "
+text = "[center]Assisterende Prosjektleder[/center]
+[center][b]Jørgen Stockfleth Baumann[/b][/center]
+
+[center]Prosjektleder[/center]
+[center][b]Ingeborg Eikrem[/b][/center]
+
 [center]Tech Lead[/center]
 [center][b]Hans Emil Eid[/b][/center]
-
-[center]Ideer[/center]
-[center][b]Bjørn Gamst[/b][/center]
 
 [center]Testanalytiker[/center]
 [center][b]Sunanda P. Gupta[/b][/center]
 
+[center]Idéer[/center]
+[center][b]Bjørn Gamst[/b][/center]
+
 [center]Utviklere[/center]
-[center][b]edvard A[/b][/center]
-[center][b]Max[/b][/center]
+[center][b]Dennis A. A.[/b][/center]
+[center][b]Edvard A.[/b][/center]
+[center][b]Edvard Arka Menart[/b][/center]
 [center][b]Jonis[/b][/center]
 [center][b]Marshall Anike[/b][/center]
-[center][b]Evard Arka Menart[/b][/center]
-[center][b]Dennis A. A.[/b][/center]
+[center][b]Max[/b][/center]
 
-"
+[center]Design[/center]
+[center][b]Knut-Ola Talgøy[/b][/center]
+[center][b]Eirik Granmorken[/b][/center]
+[center][b]Roy Arild Hagalid[/b][/center]
+
+[center]Karakterdesign[/center]
+[center][b]Day Robyn Nygaard[/b][/center]
+
+[center]Lyd & Musikk[/center]
+[center][b]Ole Mythe Kvien[/b][/center]
+[center][b]Nadia Sabrina Myrheim[/b][/center]
+
+[center]Ekstern Musikk-komponist[/center]
+[center][b]Kristian E. Svenning[/b][/center]
+
+[center]Prosjektdeltakere[/center]
+[center][b]Bjørn Haave[/b][/center]
+[center][b]Daniel Nylund Madsen[/b][/center]
+[center][b]Espen Storvold Skjelvan[/b][/center]
+[center][b]Jan Wilkosz[/b][/center]
+[center][b]Jonathan Torp[/b][/center]
+[center][b]Tori Enoksen Ristesund[/b][/center]
+[center][b]Yehor Martynenko[/b][/center]"
 
 [node name="TilbakeKnapp" type="Button" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -84,13 +133,14 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -70.0
-offset_top = -60.0
+offset_top = -52.0
 offset_right = 70.0
-offset_bottom = -20.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(1, 0.94509804, 0.8784314, 1)
 theme_override_fonts/font = ExtResource("2_e3k6c")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 32
 text = "Tilbake"
 
 [connection signal="pressed" from="TilbakeKnapp" to="." method="_on_tilbake_knapp_pressed"]
