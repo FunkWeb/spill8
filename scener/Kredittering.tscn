@@ -74,6 +74,9 @@ text = "
 [center][b]Evard Arka Menart[/b][/center]
 [center][b]Dennis A. A.[/b][/center]
 
+[center]Lydproduksjon[/center]
+[center][b]Ole Mythe Kvien[/b][/center]
+[center][b]Kristian E. Svenning[/b][/center]
 "
 
 [node name="TilbakeKnapp" type="Button" parent="."]
